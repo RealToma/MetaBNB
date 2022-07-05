@@ -1,7 +1,7 @@
-import React from "react";
-import { Box } from "@material-ui/core";
+import React, { useState } from "react";
+import { Box, Modal } from "@material-ui/core";
 import styled from "styled-components";
-import Navbar from "../navbar/navbar";
+// import Navbar from "../navbar/navbar";
 import CustomDropDown from "../../components/CustomDropDown";
 import IMG_BACK_HOUSE from "../../assets/back_house.png";
 import IMG_BACK_MAP from "../../assets/back_map.png";
@@ -9,10 +9,18 @@ import IMG_LOGO from "../../assets/logo01.png";
 import IMG_KITCHEN from "../../assets/LIVING & KITCHEN.png";
 import IMG_ROOM from "../../assets/LIVING ROOM.png";
 import IMG_OUTDOOR from "../../assets/OUT DOOR AREA.png";
-import { MdOutlineAccountBalanceWallet } from "react-icons/md";
 import TEXT_FAQ from "../../assets/data/faq_text.json";
+import { GiArchBridge, GiMushroom } from "react-icons/gi";
+import { BiBook, BiMessageDetail } from "react-icons/bi";
+import { RiBug2Fill, RiMacbookLine, RiGovernmentLine } from "react-icons/ri";
+import { FaGithub, FaTwitter, FaDiscord, FaMedium } from "react-icons/fa";
+import { MdOutlineAccountBalanceWallet, MdMenu } from "react-icons/md";
 
 const Content = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <StyledComponent>
       <Back01Component>
@@ -35,9 +43,16 @@ const Content = () => {
             <WalletBox01>
               <MdOutlineAccountBalanceWallet fontSize={"1.6rem"} />
             </WalletBox01>
+            <CustomBtn2
+              onClick={() => {
+                handleOpen();
+              }}
+            >
+              <MdMenu />
+            </CustomBtn2>
           </ConnectWallet01>
         </HeaderBar>
-        <NFTCollectionPart01>
+        {/* <NFTCollectionPart01>
           <HeadText01>NFT Collection</HeadText01>
           <ContentText01>
             A limited NFT collection that acts as a membership to access Metabnb
@@ -80,9 +95,9 @@ const Content = () => {
           </ContentText03>
           <ContentText03>* Family & friends benefits ​​</ContentText03>
           <ContentText03>* Ongoing airdrops and more to comes​</ContentText03>
-        </NFTCollectionPart01>
+        </NFTCollectionPart01> */}
       </Back01Component>
-      <Back02Component>
+      {/* <Back02Component>
         <HeadText03>Location</HeadText03>
         <PicPart01>
           <Pic01>
@@ -167,7 +182,87 @@ const Content = () => {
           </EachPart01>
         </TeamPart02>
       </TeamPart01>
-      <Footer>© 2022, Innovation Berlin</Footer>
+      <Footer>© 2022, Innovation Berlin</Footer> */}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <ModalComponent>
+          <MarkImg>
+            <img src={IMG_LOGO} alt="" width={"60px"}></img>
+          </MarkImg>
+          <MarkLetter>metabnb</MarkLetter>
+          {/* <TxtWalletAddress>{active === true ? account.slice(0, 6) + "..." + account.slice(-4) : "Connect Wallet"}</TxtWalletAddress> */}
+          <LinkList>
+            <EachLink01
+              onClick={() => {
+                handleClose();
+              }}
+            >
+              {/* <RiMacbookLine fontSize={"1.5rem"} /> */}
+              <EachLink02Txt>Mint NFT PASS</EachLink02Txt>
+            </EachLink01>
+            <EachLink01
+              onClick={() => {
+                handleClose();
+              }}
+            >
+              {/* <GiArchBridge fontSize={"1.5rem"} /> */}
+              <EachLink02Txt>How to </EachLink02Txt>
+            </EachLink01>
+            <EachLink01
+              onClick={() => {
+                handleClose();
+              }}
+            >
+              {/* <BiMessageDetail fontSize={"1.5rem"} /> */}
+              <EachLink02Txt>Location</EachLink02Txt>
+            </EachLink01>
+            <EachLink01
+              onClick={() => {
+                handleClose();
+              }}
+            >
+              {/* <RiGovernmentLine fontSize={"1.5rem"} /> */}
+              <EachLink02Txt>ROADMAP</EachLink02Txt>
+            </EachLink01>
+            <EachLink01
+              onClick={() => {
+                handleClose();
+              }}
+            >
+              {/* <BiBook fontSize={"1.5rem"} /> */}
+              <EachLink02Txt>FAQ</EachLink02Txt>
+            </EachLink01>
+            <EachLink01
+              onClick={() => {
+                handleClose();
+              }}
+            >
+              {/* <RiBug2Fill fontSize={"1.5rem"} /> */}
+              <EachLink02Txt>TEAM</EachLink02Txt>
+            </EachLink01>
+          </LinkList>
+          <ContactList>
+            <Box display={"flex"} width="80%" justifyContent={"space-between"}>
+              <ContactBox>
+                <FaGithub />
+              </ContactBox>
+              <ContactBox>
+                <FaMedium />
+              </ContactBox>
+              <ContactBox>
+                <FaTwitter />
+              </ContactBox>
+              <ContactBox>
+                <FaDiscord />
+              </ContactBox>
+            </Box>
+          </ContactList>
+        </ModalComponent>
+      </Modal>
     </StyledComponent>
   );
 };
@@ -236,6 +331,14 @@ const PageLink = styled(Box)`
   flex: 2;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1300px) {
+    transition: 0.5s;
+    flex: 3.5;
+  }
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    display: none;
+  }
 `;
 const EachLink = styled(Box)`
   display: flex;
@@ -310,7 +413,7 @@ const HeadText01 = styled(Box)`
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /* background-clip: text; */
   /* text-fill-color: transparent; */
 `;
 const HeadText02 = styled(Box)`
@@ -560,7 +663,6 @@ const TeamPart02 = styled(Box)`
   justify-content: center;
   align-items: center;
   margin-top: 150px;
-  
 `;
 const EachPart01 = styled(Box)`
   display: flex;
@@ -568,7 +670,6 @@ const EachPart01 = styled(Box)`
   align-items: center;
   margin-left: 50px;
   margin-right: 50px;
-
 `;
 const Circle02 = styled(Box)`
   display: flex;
@@ -606,6 +707,78 @@ const TeamText02 = styled(Box)`
   color: #2b2361;
   margin-top: 10px;
 `;
+
+const ModalComponent = styled(Box)`
+  display: flex;
+  transition: 1s;
+  position: fixed;
+  width: 300px;
+  outline: none;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  font-family: "Titillium Web", sans-serif;
+  color: #2b2361;
+  @media (min-width: 1000px) {
+    display: none;
+  }
+`;
+const MarkImg = styled(Box)`
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+`;
+
+const MarkLetter = styled(Box)`
+  display: flex;
+  justify-content: content;
+  margin-top: 10px;
+  /* color: white; */
+  font-size: 2.5rem;
+  font-weight: 600;
+`;
+const TxtWalletAddress = styled(Box)`
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  margin-top: 5px;
+`;
+const LinkList = styled(Box)`
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  /* color: white; */
+  margin-top: 30px;
+`;
+
+const EachLink02Txt = styled(Box)`
+  display: flex;
+  margin-left: 15px;
+  font-size: 1.3rem;
+  /* font-weight: bold; */
+`;
+
+const ContactList = styled(Box)`
+  display: flex;
+  position: fixed;
+  bottom: 15px;
+  min-width: 300px;
+  left: 0px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: rgb(104, 106, 116);
+`;
+
+const ContactBox = styled(Box)`
+  display: flex;
+  &:hover {
+    cursor: pointer;
+    color: rgb(249, 205, 128);
+  }
+`;
 const Statistics = styled(Box)`
   display: grid;
   grid-template-columns: auto auto auto;
@@ -624,5 +797,44 @@ const Statistics = styled(Box)`
     height: 320px;
   }
 `;
+
+const CustomBtn2 = styled(Box)`
+  display: none;
+  /* position: fixed; */
+  width: 43px;
+  height: 43px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  background-color: black;
+  /* background-color: rgb(34, 37, 46); */
+  color: white;
+  transition: 0.3s;
+  &:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: #2b2361;
+  }
+  @media (max-width: 1000px) {
+    display: flex;
+  }
+`;
+
+const EachLink01 = styled(Box)`
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    align-items: center;
+    &:hover{
+        cursor: pointer;
+        transition: 0.5s;
+        color: rgb(249,205,128);
+    }
+`
 
 export default Content;
