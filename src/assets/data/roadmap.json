@@ -1,0 +1,37 @@
+[
+    {
+        "headtxt": "Q2",
+        "year": "2022",
+        "contenttxt":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ",
+        "headtxt_color1":"#F6AF6D",
+        "headtxt_color2": "black"
+    },
+    {
+        "headtxt": "Q3",
+        "year": "2022",
+        "contenttxt":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ",
+        "headtxt_color1":"#DD3952",
+        "headtxt_color2": "black"
+    },
+    {
+        "headtxt": "Q4",
+        "year": "2022",
+        "contenttxt":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ",
+        "headtxt_color1":"#BD4DAD",
+        "headtxt_color2": "black"
+    },
+    {
+        "headtxt": "Q1",
+        "year": "2023",
+        "contenttxt":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ",
+        "headtxt_color1":"#9256C9",
+        "headtxt_color2": "black"
+    },
+    {
+        "headtxt": "Q2",
+        "year": "2023",
+        "contenttxt":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ",
+        "headtxt_color1":"#6E5EE1",
+        "headtxt_color2": "black"
+    }
+]

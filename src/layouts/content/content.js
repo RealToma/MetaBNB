@@ -11,6 +11,7 @@ import IMG_ROOM from "../../assets/LIVING ROOM.png";
 import IMG_OUTDOOR from "../../assets/OUT DOOR AREA.png";
 import IMG_ROADMAP from "../../assets/roadmap.png"
 import TEXT_FAQ from "../../assets/data/faq_text.json";
+import TEXT_ROADMAP from "../../assets/data/roadmap.json"
 import { GiArchBridge, GiMushroom } from "react-icons/gi";
 import { BiBook, BiMessageDetail } from "react-icons/bi";
 import { RiBug2Fill, RiMacbookLine, RiGovernmentLine } from "react-icons/ri";
@@ -18,283 +19,302 @@ import { FaGithub, FaTwitter, FaDiscord, FaMedium } from "react-icons/fa";
 import { MdOutlineAccountBalanceWallet, MdMenu } from "react-icons/md";
 
 const Content = () => {
-    const mintRef = useRef();
-    const howtoRef = useRef()
-    const locationRef = useRef()
-    const roadmapRef = useRef()
-    const faqRef = useRef()
-    const teamRef = useRef()
+  const mintRef = useRef();
+  const howtoRef = useRef()
+  const locationRef = useRef()
+  const roadmapRef = useRef()
+  const faqRef = useRef()
+  const teamRef = useRef()
 
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
-    return (
-        <StyledComponent>
-            <Back01Component>
-                <HeaderBar>
-                    <LogoPart01 onClick={()=>{
-                        window.scrollTo(0, 0);
-                    }}>
-                        <Box display={"flex"}>
-                            <img src={IMG_LOGO} width={"33px"} height={"24px"} alt="" />
-                        </Box>
-                        <LogoText display={"flex"}>metabnb</LogoText>
-                    </LogoPart01>
-                    <PageLink>
-                        <EachLink onClick={() => {
-                            mintRef.current.scrollIntoView({ behavior: 'smooth' });
-                        }}>Mint NFT PASS</EachLink>
-                        <EachLink onClick={() => {
-                            howtoRef.current.scrollIntoView({ behavior: 'smooth' });
-                        }}>How to </EachLink>
-                        <EachLink onClick={() => {
-                            locationRef.current.scrollIntoView({ behavior: 'smooth' });
-                        }}>Location</EachLink>
-                        <EachLink onClick={() => {
-                            roadmapRef.current.scrollIntoView({ behavior: 'smooth' });
-                        }}>ROADMAP</EachLink>
-                        <EachLink onClick={() => {
-                            faqRef.current.scrollIntoView({ behavior: 'smooth' });
-                        }}>FAQ</EachLink>
-                        <EachLink onClick={() => {
-                            teamRef.current.scrollIntoView({ behavior: 'smooth' });
-                        }}>TEAM</EachLink>
-                    </PageLink>
-                    <ConnectWallet01>
-                        <WalletBox01>
-                            <MdOutlineAccountBalanceWallet fontSize={"1.6rem"} />
-                        </WalletBox01>
-                        <CustomBtn2
-                            onClick={() => {
-                                handleOpen();
-                            }}
-                        >
-                            <MdMenu />
-                        </CustomBtn2>
-                    </ConnectWallet01>
-                </HeaderBar>
-                <NFTCollectionPart01 ref={mintRef}>
-                    <HeadText01>NFT</HeadText01>
-                    <HeadText01>Collection</HeadText01>
-                    <ContentText01>
-                        A limited NFT collection that acts as a membership to access Metabnb
-                        Villa, a travel community for digital nomads.
-                        <span style={{ fontWeight: "500", textTransform: "none" }}>
-                            &nbsp;After you purchase the metabnb - Genesis NFT you will
-                            receive a metabnb PFP as an airdrop. This PFP NFT gives you access
-                            to all benefits mentioned below.
-                        </span>
-                    </ContentText01>
-                    <ButtonBox01>
-                        <MintNFTPassBTN>Mint NFT Pass</MintNFTPassBTN>
-                        <ReserverBTN>Reserve Property</ReserverBTN>
-                    </ButtonBox01>
-                </NFTCollectionPart01>
-                <NFTCollectionPart01 ref={howtoRef}>
-                    <HeadText02>HOW TO</HeadText02>
-                    <ContentText02>
-                        Owning a METABNB NFT gives you access to multiple experiences
-                        including:
-                    </ContentText02>
-                    <ContentText03>
-                        * Receive 1 airdrop per year redeemable for 3 nights in the METABNB
-                        Villa - starting 2022 until 2027. Aleatory night stays airdrops
-                        afterwards
-                    </ContentText03>
-                    <ContentText03>
-                        * Night Stays NFTs are accumulative and can be sold in many NFT
-                        marketplaces
-                    </ContentText03>
-                    <ContentText03>
-                        * Get a 10% discount for life staying in the METABNB Villa - BALi,
-                        Pererenan, Pantai Lima or other METABNB verified Villa
-                    </ContentText03>
-                    <ContentText03>
-                        * Get invited to exclusive surf trips with the METABNB community
-                    </ContentText03>
-                    <ContentText03>
-                        * Free use of 2 surfboards when you stay in the METABNB VILLA
-                    </ContentText03>
-                    <ContentText03>* Family & friends benefits ​​</ContentText03>
-                    <ContentText03>* Ongoing airdrops and more to comes​</ContentText03>
-                </NFTCollectionPart01>
-            </Back01Component>
-            <Back02Component ref={locationRef}>
-                <HeadText03>Location</HeadText03>
-                <PicPart01>
-                    <Pic01>
-                        <img
-                            src={IMG_KITCHEN}
-                            width={"152px"}
-                            height={"152px"}
-                            style={{ borderRadius: "100%" }}
-                            alt=""
-                        />
-                    </Pic01>
-                    <Line01></Line01>
-                    <Position01>
-                        <Circle01></Circle01>
-                        <PositionText01>Pantai Lima</PositionText01>
-                    </Position01>
-                    <Pic02>
-                        <img
-                            src={IMG_ROOM}
-                            width={"168px"}
-                            height={"168px"}
-                            style={{ borderRadius: "100%" }}
-                            alt=""
-                        />
-                    </Pic02>
-                    <Pic03>
-                        <img
-                            src={IMG_OUTDOOR}
-                            width={"244px"}
-                            height={"244px"}
-                            style={{ borderRadius: "100%" }}
-                            alt=""
-                        />
-                    </Pic03>
-                </PicPart01>
-            </Back02Component>
-            <RoadMapPart01 ref={roadmapRef}></RoadMapPart01>
-            <FAQPart01 ref={faqRef}>
-                <HeadText02>FAQ</HeadText02>
-                {TEXT_FAQ.map((each, index) => {
-                    return (
-                        <CustomDropDown
-                            key={index}
-                            width={"60%"}
-                            h_text={each.htext}
-                            c_text={each.ctext}
-                        />
-                    );
-                })}
-            </FAQPart01>
-            <TeamPart01 ref={teamRef}>
-                <HeadText02>TEAM</HeadText02>
-                <TeamPart02>
-                    <EachPart01>
-                        <Circle02>NFT of our collection</Circle02>
-                        <TeamText01>maramelz</TeamText01>
-                        <TeamText02>Is doing CEO stuff</TeamText02>
-                    </EachPart01>
-                    <EachPart01>
-                        <Circle02>NFT of our collection</Circle02>
-                        <TeamText01>.exe</TeamText01>
-                        <TeamText02>Code or die</TeamText02>
-                    </EachPart01>
-                    <EachPart01>
-                        <Circle02>NFT of our collection</Circle02>
-                        <TeamText01>mad</TeamText01>
-                        <TeamText02>If angels could fly</TeamText02>
-                    </EachPart01>
-                    <EachPart01>
-                        <Circle02>NFT of our collection</Circle02>
-                        <TeamText01>rob</TeamText01>
-                        <TeamText02>Community is king</TeamText02>
-                    </EachPart01>
-                    <EachPart01>
-                        <Circle02>NFT of our collection</Circle02>
-                        <TeamText01>omac</TeamText01>
-                        <TeamText02>Degen 4 life</TeamText02>
-                    </EachPart01>
-                    <EachPart01>
-                        <Circle02>NFT of our collection</Circle02>
-                        <TeamText01>James</TeamText01>
-                        <TeamText02>James</TeamText02>
-                    </EachPart01>
-                </TeamPart02>
-            </TeamPart01>
-            <Footer>© 2022, Innovation Berlin</Footer>
-            <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
+  return (
+    <StyledComponent>
+      <Back01Component>
+        <HeaderBar>
+          <LogoPart01 onClick={() => {
+            window.scrollTo(0, 0);
+          }}>
+            <Box display={"flex"}>
+              <img src={IMG_LOGO} width={"33px"} height={"24px"} alt="" />
+            </Box>
+            <LogoText display={"flex"}>metabnb</LogoText>
+          </LogoPart01>
+          <PageLink>
+            <EachLink onClick={() => {
+              mintRef.current.scrollIntoView({ behavior: 'smooth' });
+            }}>Mint NFT PASS</EachLink>
+            <EachLink onClick={() => {
+              howtoRef.current.scrollIntoView({ behavior: 'smooth' });
+            }}>How to </EachLink>
+            <EachLink onClick={() => {
+              locationRef.current.scrollIntoView({ behavior: 'smooth' });
+            }}>Location</EachLink>
+            <EachLink onClick={() => {
+              roadmapRef.current.scrollIntoView({ behavior: 'smooth' });
+            }}>ROADMAP</EachLink>
+            <EachLink onClick={() => {
+              faqRef.current.scrollIntoView({ behavior: 'smooth' });
+            }}>FAQ</EachLink>
+            <EachLink onClick={() => {
+              teamRef.current.scrollIntoView({ behavior: 'smooth' });
+            }}>TEAM</EachLink>
+          </PageLink>
+          <ConnectWallet01>
+            <WalletBox01>
+              <MdOutlineAccountBalanceWallet fontSize={"1.6rem"} />
+            </WalletBox01>
+            <CustomBtn2
+              onClick={() => {
+                handleOpen();
+              }}
             >
-                <ModalComponent>
-                    <MarkImg>
-                        <img src={IMG_LOGO} alt="" width={"60px"}></img>
-                    </MarkImg>
-                    <MarkLetter>metabnb</MarkLetter>
-                    {/* <TxtWalletAddress>{active === true ? account.slice(0, 6) + "..." + account.slice(-4) : "Connect Wallet"}</TxtWalletAddress> */}
-                    <LinkList>
-                        <EachLink01
-                            onClick={() => {
-                                mintRef.current.scrollIntoView({ behavior: 'smooth' });
-                                handleClose();
-                            }}
-                        >
-                            {/* <RiMacbookLine fontSize={"1.5rem"} /> */}
-                            <EachLink02Txt>Mint NFT PASS</EachLink02Txt>
-                        </EachLink01>
-                        <EachLink01
-                            onClick={() => {
-                                howtoRef.current.scrollIntoView({ behavior: 'smooth' });
-                                handleClose();
-                            }}
-                        >
-                            {/* <GiArchBridge fontSize={"1.5rem"} /> */}
-                            <EachLink02Txt>How to </EachLink02Txt>
-                        </EachLink01>
-                        <EachLink01
-                            onClick={() => {
-                                locationRef.current.scrollIntoView({ behavior: 'smooth' });
-                                handleClose();
-                            }}
-                        >
-                            {/* <BiMessageDetail fontSize={"1.5rem"} /> */}
-                            <EachLink02Txt>Location</EachLink02Txt>
-                        </EachLink01>
-                        <EachLink01
-                            onClick={() => {
-                                roadmapRef.current.scrollIntoView({ behavior: 'smooth' });
-                                handleClose();
-                            }}
-                        >
-                            {/* <RiGovernmentLine fontSize={"1.5rem"} /> */}
-                            <EachLink02Txt>ROADMAP</EachLink02Txt>
-                        </EachLink01>
-                        <EachLink01
-                            onClick={() => {
-                                faqRef.current.scrollIntoView({ behavior: 'smooth' });
-                                handleClose();
-                            }}
-                        >
-                            {/* <BiBook fontSize={"1.5rem"} /> */}
-                            <EachLink02Txt>FAQ</EachLink02Txt>
-                        </EachLink01>
-                        <EachLink01
-                            onClick={() => {
-                                teamRef.current.scrollIntoView({ behavior: 'smooth' });
-                                handleClose();
-                            }}
-                        >
-                            {/* <RiBug2Fill fontSize={"1.5rem"} /> */}
-                            <EachLink02Txt>TEAM</EachLink02Txt>
-                        </EachLink01>
-                    </LinkList>
-                    <ContactList>
-                        <Box display={"flex"} width="80%" justifyContent={"space-between"}>
-                            <ContactBox>
-                                <FaGithub />
-                            </ContactBox>
-                            <ContactBox>
-                                <FaMedium />
-                            </ContactBox>
-                            <ContactBox>
-                                <FaTwitter />
-                            </ContactBox>
-                            <ContactBox>
-                                <FaDiscord />
-                            </ContactBox>
-                        </Box>
-                    </ContactList>
-                </ModalComponent>
-            </Modal>
-        </StyledComponent>
-    );
+              <MdMenu />
+            </CustomBtn2>
+          </ConnectWallet01>
+        </HeaderBar>
+        <NFTCollectionPart01 ref={mintRef}>
+          <HeadText01>NFT</HeadText01>
+          <HeadText01>Collection</HeadText01>
+          <ContentText01>
+            A limited NFT collection that acts as a membership to access Metabnb
+            Villa, a travel community for digital nomads.
+            <span style={{ fontWeight: "500", textTransform: "none" }}>
+              &nbsp;After you purchase the metabnb - Genesis NFT you will
+              receive a metabnb PFP as an airdrop. This PFP NFT gives you access
+              to all benefits mentioned below.
+            </span>
+          </ContentText01>
+          <ButtonBox01>
+            <MintNFTPassBTN>Mint NFT Pass</MintNFTPassBTN>
+            <ReserverBTN>Reserve Property</ReserverBTN>
+          </ButtonBox01>
+        </NFTCollectionPart01>
+        <NFTCollectionPart01 ref={howtoRef}>
+          <HeadText02>HOW TO</HeadText02>
+          <ContentText02>
+            Owning a METABNB NFT gives you access to multiple experiences
+            including:
+          </ContentText02>
+          <ContentText03>
+            * Receive 1 airdrop per year redeemable for 3 nights in the METABNB
+            Villa - starting 2022 until 2027. Aleatory night stays airdrops
+            afterwards
+          </ContentText03>
+          <ContentText03>
+            * Night Stays NFTs are accumulative and can be sold in many NFT
+            marketplaces
+          </ContentText03>
+          <ContentText03>
+            * Get a 10% discount for life staying in the METABNB Villa - BALi,
+            Pererenan, Pantai Lima or other METABNB verified Villa
+          </ContentText03>
+          <ContentText03>
+            * Get invited to exclusive surf trips with the METABNB community
+          </ContentText03>
+          <ContentText03>
+            * Free use of 2 surfboards when you stay in the METABNB VILLA
+          </ContentText03>
+          <ContentText03>* Family & friends benefits ​​</ContentText03>
+          <ContentText03>* Ongoing airdrops and more to comes​</ContentText03>
+        </NFTCollectionPart01>
+      </Back01Component>
+      <Back02Component ref={locationRef}>
+        <HeadText03>Location</HeadText03>
+        <PicPart01>
+          <Pic01>
+            <img
+              src={IMG_KITCHEN}
+              width={"152px"}
+              height={"152px"}
+              style={{ borderRadius: "100%" }}
+              alt=""
+            />
+          </Pic01>
+          <Line01></Line01>
+          <Position01>
+            <Circle01></Circle01>
+            <PositionText01>Pantai Lima</PositionText01>
+          </Position01>
+          <Pic02>
+            <img
+              src={IMG_ROOM}
+              width={"168px"}
+              height={"168px"}
+              style={{ borderRadius: "100%" }}
+              alt=""
+            />
+          </Pic02>
+          <Pic03>
+            <img
+              src={IMG_OUTDOOR}
+              width={"244px"}
+              height={"244px"}
+              style={{ borderRadius: "100%" }}
+              alt=""
+            />
+          </Pic03>
+        </PicPart01>
+      </Back02Component>
+      <RoadMapPart01 ref={roadmapRef}>
+        <RoadDesktop01></RoadDesktop01>
+        <RoadMobile01>
+          <HeadText04>
+            <Box display={"flex"} justifyContent="center" alignItems={'center'}>RoadMap</Box>{'\u00a0'}<Box display={"flex"} justifyContent="center" alignItems={'center'}>2022/2023</Box>
+          </HeadText04>
+          {TEXT_ROADMAP.map((each, index) => {
+            return (
+              <EachRoad01 key={index}>
+                <EachRoadHeader>
+                  <Box display={"flex"} color={each.headtxt_color1}>{each.headtxt}</Box>
+                  <Box display={"flex"} color={each.headtxt_color2} ml="5px">{each.year}</Box>
+                </EachRoadHeader>
+                <EachRoadText>{each.contenttxt}</EachRoadText>
+              </EachRoad01>
+            )
+          })}
+
+        </RoadMobile01>
+      </RoadMapPart01>
+      <FAQPart01 ref={faqRef}>
+        <HeadText02>FAQ</HeadText02>
+        {TEXT_FAQ.map((each, index) => {
+          return (
+            <CustomDropDown
+              key={index}
+              width={"60%"}
+              h_text={each.htext}
+              c_text={each.ctext}
+            />
+          );
+        })}
+      </FAQPart01>
+      <TeamPart01 ref={teamRef}>
+        <HeadText02>TEAM</HeadText02>
+        <TeamPart02>
+          <EachPart01>
+            <Circle02>NFT of our collection</Circle02>
+            <TeamText01>maramelz</TeamText01>
+            <TeamText02>Is doing CEO stuff</TeamText02>
+          </EachPart01>
+          <EachPart01>
+            <Circle02>NFT of our collection</Circle02>
+            <TeamText01>.exe</TeamText01>
+            <TeamText02>Code or die</TeamText02>
+          </EachPart01>
+          <EachPart01>
+            <Circle02>NFT of our collection</Circle02>
+            <TeamText01>mad</TeamText01>
+            <TeamText02>If angels could fly</TeamText02>
+          </EachPart01>
+          <EachPart01>
+            <Circle02>NFT of our collection</Circle02>
+            <TeamText01>rob</TeamText01>
+            <TeamText02>Community is king</TeamText02>
+          </EachPart01>
+          <EachPart01>
+            <Circle02>NFT of our collection</Circle02>
+            <TeamText01>omac</TeamText01>
+            <TeamText02>Degen 4 life</TeamText02>
+          </EachPart01>
+          <EachPart01>
+            <Circle02>NFT of our collection</Circle02>
+            <TeamText01>James</TeamText01>
+            <TeamText02>James</TeamText02>
+          </EachPart01>
+        </TeamPart02>
+      </TeamPart01>
+      <Footer>© 2022, Innovation Berlin</Footer>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <ModalComponent>
+          <MarkImg>
+            <img src={IMG_LOGO} alt="" width={"60px"}></img>
+          </MarkImg>
+          <MarkLetter>metabnb</MarkLetter>
+          {/* <TxtWalletAddress>{active === true ? account.slice(0, 6) + "..." + account.slice(-4) : "Connect Wallet"}</TxtWalletAddress> */}
+          <LinkList>
+            <EachLink01
+              onClick={() => {
+                mintRef.current.scrollIntoView({ behavior: 'smooth' });
+                handleClose();
+              }}
+            >
+              {/* <RiMacbookLine fontSize={"1.5rem"} /> */}
+              <EachLink02Txt>Mint NFT PASS</EachLink02Txt>
+            </EachLink01>
+            <EachLink01
+              onClick={() => {
+                howtoRef.current.scrollIntoView({ behavior: 'smooth' });
+                handleClose();
+              }}
+            >
+              {/* <GiArchBridge fontSize={"1.5rem"} /> */}
+              <EachLink02Txt>How to </EachLink02Txt>
+            </EachLink01>
+            <EachLink01
+              onClick={() => {
+                locationRef.current.scrollIntoView({ behavior: 'smooth' });
+                handleClose();
+              }}
+            >
+              {/* <BiMessageDetail fontSize={"1.5rem"} /> */}
+              <EachLink02Txt>Location</EachLink02Txt>
+            </EachLink01>
+            <EachLink01
+              onClick={() => {
+                roadmapRef.current.scrollIntoView({ behavior: 'smooth' });
+                handleClose();
+              }}
+            >
+              {/* <RiGovernmentLine fontSize={"1.5rem"} /> */}
+              <EachLink02Txt>ROADMAP</EachLink02Txt>
+            </EachLink01>
+            <EachLink01
+              onClick={() => {
+                faqRef.current.scrollIntoView({ behavior: 'smooth' });
+                handleClose();
+              }}
+            >
+              {/* <BiBook fontSize={"1.5rem"} /> */}
+              <EachLink02Txt>FAQ</EachLink02Txt>
+            </EachLink01>
+            <EachLink01
+              onClick={() => {
+                teamRef.current.scrollIntoView({ behavior: 'smooth' });
+                handleClose();
+              }}
+            >
+              {/* <RiBug2Fill fontSize={"1.5rem"} /> */}
+              <EachLink02Txt>TEAM</EachLink02Txt>
+            </EachLink01>
+          </LinkList>
+          <ContactList>
+            <Box display={"flex"} width="80%" justifyContent={"space-between"}>
+              <ContactBox>
+                <FaGithub />
+              </ContactBox>
+              <ContactBox>
+                <FaMedium />
+              </ContactBox>
+              <ContactBox>
+                <FaTwitter />
+              </ContactBox>
+              <ContactBox>
+                <FaDiscord />
+              </ContactBox>
+            </Box>
+          </ContactList>
+        </ModalComponent>
+      </Modal>
+    </StyledComponent>
+  );
 };
 
 const StyledComponent = styled(Box)`
@@ -833,23 +853,32 @@ const PositionText01 = styled(Box)`
 
 const RoadMapPart01 = styled(Box)`
     display: flex;
-    width: 60%;
+    width: 100%;
     background-color: white;
-    height: 1000px;
-    background-image: url(${IMG_ROADMAP});
-    background-size: 100% 100%;
-    /* background-position: center; */
-    background-repeat: no-repeat;
     margin-top: 200px;
+    justify-content: center;
+    
+`
+const RoadDesktop01 = styled(Box)`
+  display: flex;
+  width: 60%;
+  height: 1100px;
+  background-image: url(${IMG_ROADMAP});
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  @media (max-width: 1400px) {
+        transition: 0.5s;
+        height: 1000px;
+    }
     @media (max-width: 1200px) {
         transition: 0.5s;
         height: 900px;
     }
     @media (max-width: 1000px) {
         transition: 0.5s;
-        height: 800px;
+        display: none;
     }
-    @media (max-width: 700px) {
+    /* @media (max-width: 700px) {
         transition: 0.5s;
         height: 700px;
     }
@@ -860,8 +889,121 @@ const RoadMapPart01 = styled(Box)`
     @media (max-width: 400px) {
         transition: 0.5s;
         height: 350px;
-    }
+    } */
 `
+const RoadMobile01 = styled(Box)`
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 1000px) {
+        transition: 0.5s;
+        display: flex;
+  }
+`
+const EachRoad01 = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+`
+const EachRoadHeader = styled(Box)`
+  display: flex;
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid #6E5EE1;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 30px;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    font-size: 25px;
+    width: 120px;
+    height: 40px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-size: 22px;
+    width: 100px;
+    height: 30px;
+  }
+`
+const EachRoadText = styled(Box)`
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 29px;
+  text-align: center;
+  color: #2B2361;
+  margin-top: 10px;
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    font-size: 17px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-size: 14px;
+  }
+`
+const HeadText04 = styled(Box)`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: "Zen Tokyo Zoo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 108px;
+  text-transform: uppercase;
+  background: linear-gradient(
+    269.73deg,
+    #6d5de0 34.58%,
+    #b24eb4 45.18%,
+    #e7428e 56.14%,
+    #df3966 67.45%,
+    #d9383b 78.76%,
+    #ec865b 90.07%,
+    #fcc978 102.44%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  @media (max-width: 1300px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 85px;
+  }
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 70px;
+  }
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 50px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 40px;
+    flex-direction: column;
+  }
+`;
+
 const FAQPart01 = styled(Box)`
   display: flex;
   width: 100%;
@@ -877,6 +1019,7 @@ const TeamPart01 = styled(Box)`
   flex-direction: column;
   background-color: white;
   margin-top: 200px;
+  
 `;
 
 const Footer = styled(Box)`
