@@ -9,6 +9,7 @@ import IMG_LOGO from "../../assets/logo01.png";
 import IMG_KITCHEN from "../../assets/LIVING & KITCHEN.png";
 import IMG_ROOM from "../../assets/LIVING ROOM.png";
 import IMG_OUTDOOR from "../../assets/OUT DOOR AREA.png";
+import IMG_ROADMAP from "../../assets/roadmap.png"
 import TEXT_FAQ from "../../assets/data/faq_text.json";
 import { GiArchBridge, GiMushroom } from "react-icons/gi";
 import { BiBook, BiMessageDetail } from "react-icons/bi";
@@ -17,254 +18,256 @@ import { FaGithub, FaTwitter, FaDiscord, FaMedium } from "react-icons/fa";
 import { MdOutlineAccountBalanceWallet, MdMenu } from "react-icons/md";
 
 const Content = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
-  return (
-    <StyledComponent>
-      <Back01Component>
-        <HeaderBar>
-          <LogoPart01>
-            <Box display={"flex"}>
-              <img src={IMG_LOGO} width={"33px"} height={"24px"} alt="" />
-            </Box>
-            <LogoText display={"flex"}>metabnb</LogoText>
-          </LogoPart01>
-          <PageLink>
-            <EachLink>Mint NFT PASS</EachLink>
-            <EachLink>How to </EachLink>
-            <EachLink>Location</EachLink>
-            <EachLink>ROADMAP</EachLink>
-            <EachLink>FAQ</EachLink>
-            <EachLink>TEAM</EachLink>
-          </PageLink>
-          <ConnectWallet01>
-            <WalletBox01>
-              <MdOutlineAccountBalanceWallet fontSize={"1.6rem"} />
-            </WalletBox01>
-            <CustomBtn2
-              onClick={() => {
-                handleOpen();
-              }}
+    return (
+        <StyledComponent>
+            <Back01Component>
+                <HeaderBar>
+                    <LogoPart01>
+                        <Box display={"flex"}>
+                            <img src={IMG_LOGO} width={"33px"} height={"24px"} alt="" />
+                        </Box>
+                        <LogoText display={"flex"}>metabnb</LogoText>
+                    </LogoPart01>
+                    <PageLink>
+                        <EachLink>Mint NFT PASS</EachLink>
+                        <EachLink>How to </EachLink>
+                        <EachLink>Location</EachLink>
+                        <EachLink>ROADMAP</EachLink>
+                        <EachLink>FAQ</EachLink>
+                        <EachLink>TEAM</EachLink>
+                    </PageLink>
+                    <ConnectWallet01>
+                        <WalletBox01>
+                            <MdOutlineAccountBalanceWallet fontSize={"1.6rem"} />
+                        </WalletBox01>
+                        <CustomBtn2
+                            onClick={() => {
+                                handleOpen();
+                            }}
+                        >
+                            <MdMenu />
+                        </CustomBtn2>
+                    </ConnectWallet01>
+                </HeaderBar>
+                <NFTCollectionPart01>
+                    <HeadText01>NFT</HeadText01>
+                    <HeadText01>Collection</HeadText01>
+                    <ContentText01>
+                        A limited NFT collection that acts as a membership to access Metabnb
+                        Villa, a travel community for digital nomads.
+                        <span style={{ fontWeight: "500", textTransform: "none" }}>
+                            &nbsp;After you purchase the metabnb - Genesis NFT you will
+                            receive a metabnb PFP as an airdrop. This PFP NFT gives you access
+                            to all benefits mentioned below.
+                        </span>
+                    </ContentText01>
+                    <ButtonBox01>
+                        <MintNFTPassBTN>Mint NFT Pass</MintNFTPassBTN>
+                        <ReserverBTN>Reserve Property</ReserverBTN>
+                    </ButtonBox01>
+                </NFTCollectionPart01>
+                <NFTCollectionPart01>
+                    <HeadText02>HOW TO</HeadText02>
+                    <ContentText02>
+                        Owning a METABNB NFT gives you access to multiple experiences
+                        including:
+                    </ContentText02>
+                    <ContentText03>
+                        * Receive 1 airdrop per year redeemable for 3 nights in the METABNB
+                        Villa - starting 2022 until 2027. Aleatory night stays airdrops
+                        afterwards
+                    </ContentText03>
+                    <ContentText03>
+                        * Night Stays NFTs are accumulative and can be sold in many NFT
+                        marketplaces
+                    </ContentText03>
+                    <ContentText03>
+                        * Get a 10% discount for life staying in the METABNB Villa - BALi,
+                        Pererenan, Pantai Lima or other METABNB verified Villa
+                    </ContentText03>
+                    <ContentText03>
+                        * Get invited to exclusive surf trips with the METABNB community
+                    </ContentText03>
+                    <ContentText03>
+                        * Free use of 2 surfboards when you stay in the METABNB VILLA
+                    </ContentText03>
+                    <ContentText03>* Family & friends benefits ​​</ContentText03>
+                    <ContentText03>* Ongoing airdrops and more to comes​</ContentText03>
+                </NFTCollectionPart01>
+            </Back01Component>
+            <Back02Component>
+                <HeadText03>Location</HeadText03>
+                <PicPart01>
+                    <Pic01>
+                        <img
+                            src={IMG_KITCHEN}
+                            width={"152px"}
+                            height={"152px"}
+                            style={{ borderRadius: "100%" }}
+                            alt=""
+                        />
+                    </Pic01>
+                    <Line01></Line01>
+                    <Position01>
+                        <Circle01></Circle01>
+                        <PositionText01>Pantai Lima</PositionText01>
+                    </Position01>
+                    <Pic02>
+                        <img
+                            src={IMG_ROOM}
+                            width={"168px"}
+                            height={"168px"}
+                            style={{ borderRadius: "100%" }}
+                            alt=""
+                        />
+                    </Pic02>
+                    <Pic03>
+                        <img
+                            src={IMG_OUTDOOR}
+                            width={"244px"}
+                            height={"244px"}
+                            style={{ borderRadius: "100%" }}
+                            alt=""
+                        />
+                    </Pic03>
+                </PicPart01>
+            </Back02Component>
+            <RoadMapPart01></RoadMapPart01>
+            <FAQPart01>
+                <HeadText02>FAQ</HeadText02>
+                {TEXT_FAQ.map((each, index) => {
+                    return (
+                        <CustomDropDown
+                            key={index}
+                            width={"60%"}
+                            h_text={each.htext}
+                            c_text={each.ctext}
+                        />
+                    );
+                })}
+            </FAQPart01>
+            <TeamPart01>
+                <HeadText02>TEAM</HeadText02>
+                <TeamPart02>
+                    <EachPart01>
+                        <Circle02>NFT of our collection</Circle02>
+                        <TeamText01>maramelz</TeamText01>
+                        <TeamText02>Is doing CEO stuff</TeamText02>
+                    </EachPart01>
+                    <EachPart01>
+                        <Circle02>NFT of our collection</Circle02>
+                        <TeamText01>.exe</TeamText01>
+                        <TeamText02>Code or die</TeamText02>
+                    </EachPart01>
+                    <EachPart01>
+                        <Circle02>NFT of our collection</Circle02>
+                        <TeamText01>mad</TeamText01>
+                        <TeamText02>If angels could fly</TeamText02>
+                    </EachPart01>
+                    <EachPart01>
+                        <Circle02>NFT of our collection</Circle02>
+                        <TeamText01>rob</TeamText01>
+                        <TeamText02>Community is king</TeamText02>
+                    </EachPart01>
+                    <EachPart01>
+                        <Circle02>NFT of our collection</Circle02>
+                        <TeamText01>omac</TeamText01>
+                        <TeamText02>Degen 4 life</TeamText02>
+                    </EachPart01>
+                    <EachPart01>
+                        <Circle02>NFT of our collection</Circle02>
+                        <TeamText01>James</TeamText01>
+                        <TeamText02>James</TeamText02>
+                    </EachPart01>
+                </TeamPart02>
+            </TeamPart01>
+            <Footer>© 2022, Innovation Berlin</Footer>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
             >
-              <MdMenu />
-            </CustomBtn2>
-          </ConnectWallet01>
-        </HeaderBar>
-        {/* <NFTCollectionPart01>
-          <HeadText01>NFT Collection</HeadText01>
-          <ContentText01>
-            A limited NFT collection that acts as a membership to access Metabnb
-            Villa, a travel community for digital nomads.
-            <span style={{ fontWeight: "500", textTransform: "none" }}>
-              &nbsp;After you purchase the metabnb - Genesis NFT you will
-              receive a metabnb PFP as an airdrop. This PFP NFT gives you access
-              to all benefits mentioned below.
-            </span>
-          </ContentText01>
-          <ButtonBox01>
-            <MintNFTPassBTN>Mint NFT Pass</MintNFTPassBTN>
-            <ReserverBTN>Reserve Property</ReserverBTN>
-          </ButtonBox01>
-        </NFTCollectionPart01>
-        <NFTCollectionPart01>
-          <HeadText02>HOW TO</HeadText02>
-          <ContentText02>
-            Owning a METABNB NFT gives you access to multiple experiences
-            including:
-          </ContentText02>
-          <ContentText03>
-            * Receive 1 airdrop per year redeemable for 3 nights in the METABNB
-            Villa - starting 2022 until 2027. Aleatory night stays airdrops
-            afterwards ​
-          </ContentText03>
-          <ContentText03>
-            ​* Night Stays NFTs are accumulative and can be sold in many NFT
-            marketplaces
-          </ContentText03>
-          <ContentText03>
-            * Get a 10% discount for life staying in the METABNB Villa - BALi,
-            Pererenan, Pantai Lima or other METABNB verified Villa​
-          </ContentText03>
-          <ContentText03>
-            ​* Get invited to exclusive surf trips with the METABNB community
-          </ContentText03>
-          <ContentText03>
-            * Free use of 2 surfboards when you stay in the METABNB VILLA​
-          </ContentText03>
-          <ContentText03>* Family & friends benefits ​​</ContentText03>
-          <ContentText03>* Ongoing airdrops and more to comes​</ContentText03>
-        </NFTCollectionPart01> */}
-      </Back01Component>
-      {/* <Back02Component>
-        <HeadText03>Location</HeadText03>
-        <PicPart01>
-          <Pic01>
-            <img
-              src={IMG_KITCHEN}
-              width={"152px"}
-              height={"152px"}
-              style={{ borderRadius: "100%" }}
-              alt=""
-            />
-          </Pic01>
-          <Line01></Line01>
-          <Position01>
-            <Circle01></Circle01>
-            <PositionText01>Pantai Lima</PositionText01>
-          </Position01>
-          <Pic02>
-            <img
-              src={IMG_ROOM}
-              width={"168px"}
-              height={"168px"}
-              style={{ borderRadius: "100%" }}
-              alt=""
-            />
-          </Pic02>
-          <Pic03>
-            <img
-              src={IMG_OUTDOOR}
-              width={"244px"}
-              height={"244px"}
-              style={{ borderRadius: "100%" }}
-              alt=""
-            />
-          </Pic03>
-        </PicPart01>
-      </Back02Component>
-      <FAQPart01>
-        <HeadText02>FAQ</HeadText02>
-        {TEXT_FAQ.map((each, index) => {
-          return (
-            <CustomDropDown
-              key={index}
-              width={"60%"}
-              h_text={each.htext}
-              c_text={each.ctext}
-            />
-          );
-        })}
-      </FAQPart01>
-      <TeamPart01>
-        <HeadText02>TEAM</HeadText02>
-        <TeamPart02>
-          <EachPart01>
-            <Circle02>NFT of our collection</Circle02>
-            <TeamText01>maramelz</TeamText01>
-            <TeamText02>Is doing CEO stuff</TeamText02>
-          </EachPart01>
-          <EachPart01>
-            <Circle02>NFT of our collection</Circle02>
-            <TeamText01>.exe</TeamText01>
-            <TeamText02>Code or die</TeamText02>
-          </EachPart01>
-          <EachPart01>
-            <Circle02>NFT of our collection</Circle02>
-            <TeamText01>mad</TeamText01>
-            <TeamText02>If angels could fly</TeamText02>
-          </EachPart01>
-          <EachPart01>
-            <Circle02>NFT of our collection</Circle02>
-            <TeamText01>rob</TeamText01>
-            <TeamText02>Community is king</TeamText02>
-          </EachPart01>
-          <EachPart01>
-            <Circle02>NFT of our collection</Circle02>
-            <TeamText01>omac</TeamText01>
-            <TeamText02>Degen 4 life</TeamText02>
-          </EachPart01>
-          <EachPart01>
-            <Circle02>NFT of our collection</Circle02>
-            <TeamText01>James</TeamText01>
-            <TeamText02>James</TeamText02>
-          </EachPart01>
-        </TeamPart02>
-      </TeamPart01>
-      <Footer>© 2022, Innovation Berlin</Footer> */}
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <ModalComponent>
-          <MarkImg>
-            <img src={IMG_LOGO} alt="" width={"60px"}></img>
-          </MarkImg>
-          <MarkLetter>metabnb</MarkLetter>
-          {/* <TxtWalletAddress>{active === true ? account.slice(0, 6) + "..." + account.slice(-4) : "Connect Wallet"}</TxtWalletAddress> */}
-          <LinkList>
-            <EachLink01
-              onClick={() => {
-                handleClose();
-              }}
-            >
-              {/* <RiMacbookLine fontSize={"1.5rem"} /> */}
-              <EachLink02Txt>Mint NFT PASS</EachLink02Txt>
-            </EachLink01>
-            <EachLink01
-              onClick={() => {
-                handleClose();
-              }}
-            >
-              {/* <GiArchBridge fontSize={"1.5rem"} /> */}
-              <EachLink02Txt>How to </EachLink02Txt>
-            </EachLink01>
-            <EachLink01
-              onClick={() => {
-                handleClose();
-              }}
-            >
-              {/* <BiMessageDetail fontSize={"1.5rem"} /> */}
-              <EachLink02Txt>Location</EachLink02Txt>
-            </EachLink01>
-            <EachLink01
-              onClick={() => {
-                handleClose();
-              }}
-            >
-              {/* <RiGovernmentLine fontSize={"1.5rem"} /> */}
-              <EachLink02Txt>ROADMAP</EachLink02Txt>
-            </EachLink01>
-            <EachLink01
-              onClick={() => {
-                handleClose();
-              }}
-            >
-              {/* <BiBook fontSize={"1.5rem"} /> */}
-              <EachLink02Txt>FAQ</EachLink02Txt>
-            </EachLink01>
-            <EachLink01
-              onClick={() => {
-                handleClose();
-              }}
-            >
-              {/* <RiBug2Fill fontSize={"1.5rem"} /> */}
-              <EachLink02Txt>TEAM</EachLink02Txt>
-            </EachLink01>
-          </LinkList>
-          <ContactList>
-            <Box display={"flex"} width="80%" justifyContent={"space-between"}>
-              <ContactBox>
-                <FaGithub />
-              </ContactBox>
-              <ContactBox>
-                <FaMedium />
-              </ContactBox>
-              <ContactBox>
-                <FaTwitter />
-              </ContactBox>
-              <ContactBox>
-                <FaDiscord />
-              </ContactBox>
-            </Box>
-          </ContactList>
-        </ModalComponent>
-      </Modal>
-    </StyledComponent>
-  );
+                <ModalComponent>
+                    <MarkImg>
+                        <img src={IMG_LOGO} alt="" width={"60px"}></img>
+                    </MarkImg>
+                    <MarkLetter>metabnb</MarkLetter>
+                    {/* <TxtWalletAddress>{active === true ? account.slice(0, 6) + "..." + account.slice(-4) : "Connect Wallet"}</TxtWalletAddress> */}
+                    <LinkList>
+                        <EachLink01
+                            onClick={() => {
+                                handleClose();
+                            }}
+                        >
+                            {/* <RiMacbookLine fontSize={"1.5rem"} /> */}
+                            <EachLink02Txt>Mint NFT PASS</EachLink02Txt>
+                        </EachLink01>
+                        <EachLink01
+                            onClick={() => {
+                                handleClose();
+                            }}
+                        >
+                            {/* <GiArchBridge fontSize={"1.5rem"} /> */}
+                            <EachLink02Txt>How to </EachLink02Txt>
+                        </EachLink01>
+                        <EachLink01
+                            onClick={() => {
+                                handleClose();
+                            }}
+                        >
+                            {/* <BiMessageDetail fontSize={"1.5rem"} /> */}
+                            <EachLink02Txt>Location</EachLink02Txt>
+                        </EachLink01>
+                        <EachLink01
+                            onClick={() => {
+                                handleClose();
+                            }}
+                        >
+                            {/* <RiGovernmentLine fontSize={"1.5rem"} /> */}
+                            <EachLink02Txt>ROADMAP</EachLink02Txt>
+                        </EachLink01>
+                        <EachLink01
+                            onClick={() => {
+                                handleClose();
+                            }}
+                        >
+                            {/* <BiBook fontSize={"1.5rem"} /> */}
+                            <EachLink02Txt>FAQ</EachLink02Txt>
+                        </EachLink01>
+                        <EachLink01
+                            onClick={() => {
+                                handleClose();
+                            }}
+                        >
+                            {/* <RiBug2Fill fontSize={"1.5rem"} /> */}
+                            <EachLink02Txt>TEAM</EachLink02Txt>
+                        </EachLink01>
+                    </LinkList>
+                    <ContactList>
+                        <Box display={"flex"} width="80%" justifyContent={"space-between"}>
+                            <ContactBox>
+                                <FaGithub />
+                            </ContactBox>
+                            <ContactBox>
+                                <FaMedium />
+                            </ContactBox>
+                            <ContactBox>
+                                <FaTwitter />
+                            </ContactBox>
+                            <ContactBox>
+                                <FaDiscord />
+                            </ContactBox>
+                        </Box>
+                    </ContactList>
+                </ModalComponent>
+            </Modal>
+        </StyledComponent>
+    );
 };
 
 const StyledComponent = styled(Box)`
@@ -272,6 +275,7 @@ const StyledComponent = styled(Box)`
   width: 100%;
   flex-direction: column;
   color: white;
+  align-items: center;
 `;
 const Back01Component = styled(Box)`
   display: flex;
@@ -280,8 +284,9 @@ const Back01Component = styled(Box)`
   flex-direction: column;
   background-color: white;
   background-image: url(${IMG_BACK_HOUSE});
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 `;
 const Back02Component = styled(Box)`
   display: flex;
@@ -291,7 +296,7 @@ const Back02Component = styled(Box)`
   flex-direction: column;
   background-color: white;
   background-image: url(${IMG_BACK_MAP});
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
@@ -392,7 +397,7 @@ const NFTCollectionPart01 = styled(Box)`
 `;
 const HeadText01 = styled(Box)`
   display: flex;
-  width: 50%;
+  /* width: 50%; */
   justify-content: center;
   font-family: "Zen Tokyo Zoo";
   font-style: normal;
@@ -415,6 +420,26 @@ const HeadText01 = styled(Box)`
   -webkit-text-fill-color: transparent;
   /* background-clip: text; */
   /* text-fill-color: transparent; */
+  @media (max-width: 1300px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 85px;
+  }
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 70px;
+  }
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 50px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 40px;
+  }
 `;
 const HeadText02 = styled(Box)`
   display: flex;
@@ -441,6 +466,26 @@ const HeadText02 = styled(Box)`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   /* text-fill-color: transparent; */
+  @media (max-width: 1300px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 85px;
+  }
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 70px;
+  }
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 50px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 40px;
+  }
 `;
 const HeadText03 = styled(Box)`
   font-family: "Zen Tokyo Zoo";
@@ -467,6 +512,22 @@ const HeadText03 = styled(Box)`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   /* text-fill-color: transparent; */
+  @media (max-width: 1300px) {
+    transition: 0.5s;
+    font-size: 150px;
+  }
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    font-size: 110px;
+  }
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    font-size: 70px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-size: 50px;
+  }
 `;
 
 const ContentText01 = styled(Box)`
@@ -481,6 +542,22 @@ const ContentText01 = styled(Box)`
   text-transform: uppercase;
   color: #2b2361;
   margin-top: 70px;
+  @media (max-width: 1300px) {
+    transition: 0.5s;
+    font-size: 16px;
+  }
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    font-size: 15px;
+  }
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    font-size: 13px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-size: 10px;
+  }
 `;
 const ButtonBox01 = styled(Box)`
   display: flex;
@@ -515,6 +592,18 @@ const MintNFTPassBTN = styled(Box)`
     border: 1px solid #2b2361;
   }
   margin-right: 10px;
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    width: 180px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    width: 150px;
+  }
+  @media (max-width: 400px) {
+    transition: 0.5s;
+    width: 130px;
+  }
 `;
 const ReserverBTN = styled(Box)`
   display: flex;
@@ -534,6 +623,18 @@ const ReserverBTN = styled(Box)`
     border: 1px solid black;
   }
   margin-left: 10px;
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    width: 180px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    width: 150px;
+  }
+  @media (max-width: 400px) {
+    transition: 0.5s;
+    width: 130px;
+  }
 `;
 const ContentText02 = styled(Box)`
   display: flex;
@@ -546,6 +647,22 @@ const ContentText02 = styled(Box)`
   text-transform: uppercase;
   color: #2b2361;
   margin-top: 70px;
+  @media (max-width: 1300px) {
+    transition: 0.5s;
+    font-size: 16px;
+  }
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    font-size: 15px;
+  }
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    font-size: 13px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-size: 10px;
+  }
 `;
 const ContentText03 = styled(Box)`
   display: flex;
@@ -558,6 +675,22 @@ const ContentText03 = styled(Box)`
   text-transform: uppercase;
   color: #2b2361;
   margin-top: 50px;
+  @media (max-width: 1300px) {
+    transition: 0.5s;
+    font-size: 16px;
+  }
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    font-size: 15px;
+  }
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    font-size: 13px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-size: 10px;
+  }
 `;
 const PicPart01 = styled(Box)`
   display: flex;
@@ -566,6 +699,26 @@ const PicPart01 = styled(Box)`
   align-items: center;
   left: 35%;
   top: 45%;
+  @media (max-width: 1400px) {
+    transition: 0.5s;
+    left: 30%;
+  }
+  @media (max-width: 1200px) {
+    transition: 0.5s;
+    left: 28%;
+  }
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    left: 20%;
+  }
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    left: 15%;
+  }
+  @media (max-width: 400px) {
+    transition: 0.5s;
+    left: 0%;
+  }
 `;
 const Pic01 = styled(Box)`
   display: flex;
@@ -578,6 +731,10 @@ const Pic02 = styled(Box)`
   position: absolute;
   left: -200px;
   top: -80px;
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    display: none;
+  }
 `;
 const Pic03 = styled(Box)`
   display: flex;
@@ -585,6 +742,10 @@ const Pic03 = styled(Box)`
   position: absolute;
   left: -200px;
   bottom: -200px;
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    display: none;
+  }
 `;
 
 const Line01 = styled(Box)`
@@ -593,6 +754,19 @@ const Line01 = styled(Box)`
   height: 2px;
   background-color: #6e5ee1;
   margin-left: 20px;
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    width: 150px;
+  }
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    width: 100px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    width: 50px;
+  }
+  
 `;
 const Position01 = styled(Box)`
   display: flex;
@@ -626,13 +800,41 @@ const PositionText01 = styled(Box)`
   text-transform: uppercase;
   color: #858585;
 `;
+
+const RoadMapPart01 = styled(Box)`
+    display: flex;
+    width: 80%;
+    background-color: white;
+    height: 900px;
+    background-image: url(${IMG_ROADMAP});
+    background-size: 100% 100%;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    margin-top: 200px;
+    @media (max-width: 1000px) {
+        transition: 0.5s;
+        height: 800px;
+    }
+    @media (max-width: 700px) {
+        transition: 0.5s;
+        height: 700px;
+    }
+    @media (max-width: 500px) {
+        transition: 0.5s;
+        height: 500px;
+    }
+    @media (max-width: 400px) {
+        transition: 0.5s;
+        height: 350px;
+    }
+`
 const FAQPart01 = styled(Box)`
   display: flex;
   width: 100%;
   align-items: center;
   flex-direction: column;
   background-color: white;
-  margin-bottom: 200px;
+  margin-top: 200px;
 `;
 const TeamPart01 = styled(Box)`
   display: flex;
@@ -640,7 +842,7 @@ const TeamPart01 = styled(Box)`
   align-items: center;
   flex-direction: column;
   background-color: white;
-  margin-bottom: 200px;
+  margin-top: 200px;
 `;
 
 const Footer = styled(Box)`
@@ -657,11 +859,23 @@ const Footer = styled(Box)`
   text-align: center;
   color: #000000;
   background: #f5f5f5;
+  margin-top: 200px;
 `;
 const TeamPart02 = styled(Box)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  /* justify-content: center;
+  align-items: center; */
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    grid-template-columns: auto auto auto;
+    grid-row-gap: 50px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    grid-template-columns: auto auto;
+    grid-row-gap: 50px;
+  }
   margin-top: 150px;
 `;
 const EachPart01 = styled(Box)`
@@ -670,6 +884,36 @@ const EachPart01 = styled(Box)`
   align-items: center;
   margin-left: 50px;
   margin-right: 50px;
+  @media (max-width: 1400px) {
+    transition: 0.5s;
+    margin-left: 30px;
+    margin-right: 30px
+  }
+  @media (max-width: 1200px) {
+    transition: 0.5s;
+    margin-left: 20px;
+    margin-right: 20px
+  }
+  @media (max-width: 1000px) {
+    transition: 0.5s;
+    margin-left: 50px;
+    margin-right: 50px
+  }
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    margin-left: 20px;
+    margin-right: 20px
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    margin-left: 30px;
+    margin-right: 30px
+  }
+  @media (max-width: 350px) {
+    transition: 0.5s;
+    margin-left: 10px;
+    margin-right: 10px
+  }
 `;
 const Circle02 = styled(Box)`
   display: flex;

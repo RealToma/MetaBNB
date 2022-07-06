@@ -39,6 +39,22 @@ const HText = styled(Box)`
   display: flex;
   align-items: center;
   color: #000000;
+  @media (max-width: 1200px) {
+      transition: 0.5s;
+      font-size: 22px;
+  }
+  @media (max-width: 1000px) {
+      transition: 0.5s;
+      font-size: 18px;
+  }
+  @media (max-width: 700px) {
+      transition: 0.5s;
+      font-size: 15px;
+  }
+  @media (max-width: 500px) {
+      transition: 0.5s;
+      font-size: 12px;
+  }
 `;
 
 const CText = styled(Box)`
@@ -51,6 +67,22 @@ const CText = styled(Box)`
   color: #2b2361;
   margin-top: 50px;
   transition: .5s;
+  @media (max-width: 1200px) {
+      transition: 0.5s;
+      font-size: 16px;
+  }
+  @media (max-width: 1000px) {
+      transition: 0.5s;
+      font-size: 14px;
+  }
+  @media (max-width: 700px) {
+      transition: 0.5s;
+      font-size: 12px;
+  }
+  @media (max-width: 500px) {
+      transition: 0.5s;
+      font-size: 10px;
+  }
 `;
 
 const PlusBox = styled(Box)`
@@ -61,6 +93,22 @@ const PlusBox = styled(Box)`
   font-weight: bold;
   color: #ee8b5e;
   cursor: pointer;
+  @media (max-width: 1200px) {
+      transition: 0.5s;
+      font-size: 1.6rem;
+  }
+  @media (max-width: 1000px) {
+      transition: 0.5s;
+      font-size: 1.5rem;
+  }
+  @media (max-width: 700px) {
+      transition: 0.5s;
+      font-size: 1.3rem;
+  }
+  @media (max-width: 500px) {
+      transition: 0.5s;
+      font-size: 1.2rem;
+  }
   /* &:hover{
         transition: .5s;
         transform: rotate(45deg);
