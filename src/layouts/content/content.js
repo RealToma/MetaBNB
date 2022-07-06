@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Box, Modal } from "@material-ui/core";
 import styled from "styled-components";
 // import Navbar from "../navbar/navbar";
@@ -18,6 +18,13 @@ import { FaGithub, FaTwitter, FaDiscord, FaMedium } from "react-icons/fa";
 import { MdOutlineAccountBalanceWallet, MdMenu } from "react-icons/md";
 
 const Content = () => {
+    const mintRef = useRef();
+    const howtoRef = useRef()
+    const locationRef = useRef()
+    const roadmapRef = useRef()
+    const faqRef = useRef()
+    const teamRef = useRef()
+
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -26,19 +33,33 @@ const Content = () => {
         <StyledComponent>
             <Back01Component>
                 <HeaderBar>
-                    <LogoPart01>
+                    <LogoPart01 onClick={()=>{
+                        window.scrollTo(0, 0);
+                    }}>
                         <Box display={"flex"}>
                             <img src={IMG_LOGO} width={"33px"} height={"24px"} alt="" />
                         </Box>
                         <LogoText display={"flex"}>metabnb</LogoText>
                     </LogoPart01>
                     <PageLink>
-                        <EachLink>Mint NFT PASS</EachLink>
-                        <EachLink>How to </EachLink>
-                        <EachLink>Location</EachLink>
-                        <EachLink>ROADMAP</EachLink>
-                        <EachLink>FAQ</EachLink>
-                        <EachLink>TEAM</EachLink>
+                        <EachLink onClick={() => {
+                            mintRef.current.scrollIntoView({ behavior: 'smooth' });
+                        }}>Mint NFT PASS</EachLink>
+                        <EachLink onClick={() => {
+                            howtoRef.current.scrollIntoView({ behavior: 'smooth' });
+                        }}>How to </EachLink>
+                        <EachLink onClick={() => {
+                            locationRef.current.scrollIntoView({ behavior: 'smooth' });
+                        }}>Location</EachLink>
+                        <EachLink onClick={() => {
+                            roadmapRef.current.scrollIntoView({ behavior: 'smooth' });
+                        }}>ROADMAP</EachLink>
+                        <EachLink onClick={() => {
+                            faqRef.current.scrollIntoView({ behavior: 'smooth' });
+                        }}>FAQ</EachLink>
+                        <EachLink onClick={() => {
+                            teamRef.current.scrollIntoView({ behavior: 'smooth' });
+                        }}>TEAM</EachLink>
                     </PageLink>
                     <ConnectWallet01>
                         <WalletBox01>
@@ -53,7 +74,7 @@ const Content = () => {
                         </CustomBtn2>
                     </ConnectWallet01>
                 </HeaderBar>
-                <NFTCollectionPart01>
+                <NFTCollectionPart01 ref={mintRef}>
                     <HeadText01>NFT</HeadText01>
                     <HeadText01>Collection</HeadText01>
                     <ContentText01>
@@ -70,7 +91,7 @@ const Content = () => {
                         <ReserverBTN>Reserve Property</ReserverBTN>
                     </ButtonBox01>
                 </NFTCollectionPart01>
-                <NFTCollectionPart01>
+                <NFTCollectionPart01 ref={howtoRef}>
                     <HeadText02>HOW TO</HeadText02>
                     <ContentText02>
                         Owning a METABNB NFT gives you access to multiple experiences
@@ -99,7 +120,7 @@ const Content = () => {
                     <ContentText03>* Ongoing airdrops and more to comes​</ContentText03>
                 </NFTCollectionPart01>
             </Back01Component>
-            <Back02Component>
+            <Back02Component ref={locationRef}>
                 <HeadText03>Location</HeadText03>
                 <PicPart01>
                     <Pic01>
@@ -136,8 +157,8 @@ const Content = () => {
                     </Pic03>
                 </PicPart01>
             </Back02Component>
-            <RoadMapPart01></RoadMapPart01>
-            <FAQPart01>
+            <RoadMapPart01 ref={roadmapRef}></RoadMapPart01>
+            <FAQPart01 ref={faqRef}>
                 <HeadText02>FAQ</HeadText02>
                 {TEXT_FAQ.map((each, index) => {
                     return (
@@ -150,7 +171,7 @@ const Content = () => {
                     );
                 })}
             </FAQPart01>
-            <TeamPart01>
+            <TeamPart01 ref={teamRef}>
                 <HeadText02>TEAM</HeadText02>
                 <TeamPart02>
                     <EachPart01>
@@ -201,6 +222,7 @@ const Content = () => {
                     <LinkList>
                         <EachLink01
                             onClick={() => {
+                                mintRef.current.scrollIntoView({ behavior: 'smooth' });
                                 handleClose();
                             }}
                         >
@@ -209,6 +231,7 @@ const Content = () => {
                         </EachLink01>
                         <EachLink01
                             onClick={() => {
+                                howtoRef.current.scrollIntoView({ behavior: 'smooth' });
                                 handleClose();
                             }}
                         >
@@ -217,6 +240,7 @@ const Content = () => {
                         </EachLink01>
                         <EachLink01
                             onClick={() => {
+                                locationRef.current.scrollIntoView({ behavior: 'smooth' });
                                 handleClose();
                             }}
                         >
@@ -225,6 +249,7 @@ const Content = () => {
                         </EachLink01>
                         <EachLink01
                             onClick={() => {
+                                roadmapRef.current.scrollIntoView({ behavior: 'smooth' });
                                 handleClose();
                             }}
                         >
@@ -233,6 +258,7 @@ const Content = () => {
                         </EachLink01>
                         <EachLink01
                             onClick={() => {
+                                faqRef.current.scrollIntoView({ behavior: 'smooth' });
                                 handleClose();
                             }}
                         >
@@ -241,6 +267,7 @@ const Content = () => {
                         </EachLink01>
                         <EachLink01
                             onClick={() => {
+                                teamRef.current.scrollIntoView({ behavior: 'smooth' });
                                 handleClose();
                             }}
                         >
@@ -304,6 +331,8 @@ const Back02Component = styled(Box)`
 
 const HeaderBar = styled(Box)`
   display: flex;
+  /* position: fixed; */
+  z-index: 100;
   width: 90%;
   align-items: center;
   font-family: "Titillium Web", sans-serif;
@@ -314,6 +343,7 @@ const LogoPart01 = styled(Box)`
   display: flex;
   align-items: center;
   flex: 1;
+    cursor: pointer;
 `;
 const LogoText = styled(Box)`
   display: flex;
@@ -803,14 +833,18 @@ const PositionText01 = styled(Box)`
 
 const RoadMapPart01 = styled(Box)`
     display: flex;
-    width: 80%;
+    width: 60%;
     background-color: white;
-    height: 900px;
+    height: 1000px;
     background-image: url(${IMG_ROADMAP});
     background-size: 100% 100%;
     /* background-position: center; */
     background-repeat: no-repeat;
     margin-top: 200px;
+    @media (max-width: 1200px) {
+        transition: 0.5s;
+        height: 900px;
+    }
     @media (max-width: 1000px) {
         transition: 0.5s;
         height: 800px;
