@@ -23,6 +23,8 @@ import IMGTeammad from "../../assets/team/mad.png"
 import IMGTeamrob from "../../assets/team/rob.png"
 import IMGTeamomac from "../../assets/team/omac.png"
 import IMGTeajuliusb from "../../assets/team/julius.png"
+import RoadmapBar from "../../assets/roadmapBar.svg"
+
 
 const Content = () => {
   const mintRef = useRef();
@@ -243,19 +245,41 @@ const Content = () => {
         </Position01>
       </Back02Component>
       <RoadMapPart01 ref={roadmapRef}>
-        <RoadDesktop01></RoadDesktop01>
+        {/* <RoadDesktop01></RoadDesktop01> */}
+        <RoadDesktop>
+          <HeadText02>Roadmap</HeadText02>
+          {TEXT_ROADMAP.map((each, index) => {
+            return (
+              <EachRoad02 key={index}>
+                <EachRoadHeader>
+                  <Box display={"flex"} color={each.color}>{each.headtxt}</Box>
+                </EachRoadHeader>
+                {each.contentText.map((each1, index1) => {
+                  return (
+                    <EachRoadText key={index1}>{each1}</EachRoadText>
+                  )
+                })}
+
+              </EachRoad02>
+            )
+          })}
+        </RoadDesktop>
         <RoadMobile01>
           <HeadText04>
-            <Box display={"flex"} justifyContent="center" alignItems={'center'}>RoadMap</Box>{'\u00a0'}<Box display={"flex"} justifyContent="center" alignItems={'center'}>2022/2023</Box>
+            <Box display={"flex"} justifyContent="center" alignItems={'center'}>RoadMap</Box>
           </HeadText04>
           {TEXT_ROADMAP.map((each, index) => {
             return (
               <EachRoad01 key={index}>
                 <EachRoadHeader>
-                  <Box display={"flex"} color={each.headtxt_color1}>{each.headtxt}</Box>
-                  <Box display={"flex"} color={each.headtxt_color2} ml="5px">{each.year}</Box>
+                  <Box display={"flex"} color={each.color}>{each.headtxt}</Box>
                 </EachRoadHeader>
-                <EachRoadText>{each.contenttxt}</EachRoadText>
+                {each.contentText.map((each1, index1) => {
+                  return (
+                    <EachRoadText key={index1}>{each1}</EachRoadText>
+                  )
+                })}
+
               </EachRoad01>
             )
           })}
@@ -672,15 +696,30 @@ const HeadText01 = styled(Box)`
     font-weight: 400;
     font-size: 70px;
   }
+  @media (max-width: 900px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 60px;
+  }
   @media (max-width: 700px) {
     transition: 0.5s;
     font-weight: 400;
     font-size: 50px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     transition: 0.5s;
     font-weight: 400;
     font-size: 40px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 30px;
+  }
+  @media (max-width: 400px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 25px;
   }
 `;
 const HeadText02 = styled(Box)`
@@ -1052,6 +1091,13 @@ const RoadMapPart01 = styled(Box)`
     justify-content: center;
     
 `
+
+const RoadDesktop = styled(Box)`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+`
 const RoadDesktop01 = styled(Box)`
   display: flex;
   width: 60%;
@@ -1086,6 +1132,7 @@ const RoadDesktop01 = styled(Box)`
 `
 const RoadMobile01 = styled(Box)`
   display: none;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1096,16 +1143,27 @@ const RoadMobile01 = styled(Box)`
 `
 const EachRoad01 = styled(Box)`
   display: flex;
+  width: 100%;
   flex-direction: column;
-  align-items: center;
   margin-top: 50px;
+  align-items: center;
 `
+const EachRoad02 = styled(Box)`
+  display: flex;
+  width: 100%;
+  position: absolute;
+  flex-direction: column;
+  margin-top: 50px;
+  align-items: center;
+`
+
 const EachRoadHeader = styled(Box)`
   display: flex;
   width: 150px;
   height: 50px;
   background-color: white;
   border: 1px solid #6E5EE1;
+  border-radius: 0px 20px 20px 0px;
   align-items: center;
   justify-content: center;
   font-family: 'Titillium Web';
@@ -1131,20 +1189,21 @@ const EachRoadHeader = styled(Box)`
 `
 const EachRoadText = styled(Box)`
   display: flex;
-  width: 60%;
-  justify-content: center;
+  width: 50%;
+  justify-content: flex-start;
   align-items: center;
   font-family: 'Titillium Web';
   font-style: normal;
   font-weight: 400;
   font-size: 19px;
   line-height: 29px;
-  text-align: center;
+  text-align: start;
   color: #2B2361;
   margin-top: 10px;
   @media (max-width: 700px) {
     transition: 0.5s;
     font-size: 17px;
+    width: 60%;
   }
   @media (max-width: 500px) {
     transition: 0.5s;

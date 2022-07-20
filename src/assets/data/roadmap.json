@@ -1,37 +1,60 @@
 [
-    {
-        "headtxt": "Q2",
-        "year": "2022",
-        "contenttxt":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ",
-        "headtxt_color1":"#F6AF6D",
-        "headtxt_color2": "black"
-    },
-    {
-        "headtxt": "Q3",
-        "year": "2022",
-        "contenttxt":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ",
-        "headtxt_color1":"#DD3952",
-        "headtxt_color2": "black"
-    },
-    {
-        "headtxt": "Q4",
-        "year": "2022",
-        "contenttxt":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ",
-        "headtxt_color1":"#BD4DAD",
-        "headtxt_color2": "black"
-    },
-    {
-        "headtxt": "Q1",
-        "year": "2023",
-        "contenttxt":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ",
-        "headtxt_color1":"#9256C9",
-        "headtxt_color2": "black"
-    },
-    {
-        "headtxt": "Q2",
-        "year": "2023",
-        "contenttxt":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ",
-        "headtxt_color1":"#6E5EE1",
-        "headtxt_color2": "black"
-    }
+  {
+    "headtxt": "Q2 2022",
+    "contentText": [
+      "■ Foundation of METAbnb",
+      "■ Aquire Land in la Saladita",
+      "■ Forming Key Partnerships",
+      "■ Start construction of Case Akaw - La Saladita",
+      "■ Pre-Seed Fundraising for I.B."
+    ],
+    "color": "black"
+  },
+  {
+    "headtxt": "Q2 2022",
+    "contentText": [
+      "■ Team Expansion",
+      "■ Partnership Formation",
+      "■ Company Foundation in Dubai",
+      "■ METAbnb ‘Surf Bums’ NFT collection release",
+      "■ Finish construction of Bali, Pererenan, Pantai Lima"
+    ],
+    "color": "black"
+  },
+  {
+    "headtxt": "Q3 2022",
+    "contentText": [
+      "■ Completion of METAbnb Whitepaper",
+      "■ METAbnb ‘Buddha Hood’ NFT collection release",
+      "■ Inauguration of Casa Akaw - La Saladita",
+      "■ Finish construction of Bali, Pererenan, Pantai Lima",
+      "■ Inauguration of Bali, Pererenan, Pantai Lima"
+    ],
+    "color": "black"
+  },
+  {
+    "headtxt": "Q4 2022",
+    "contentText": [
+      "■ Acquiring new Properties in Bali and Mexico",
+      "■ Adding more Value and Benefits to the ecosystem",
+      "■ Trade ‘Casa Akaw’ night stays on any NFT marketplace",
+      "■ Launch Booking Plattform",
+      "■ Partner with international Real Estate Developers",
+      "■ Launch Own Plattfrom for Community to follow and co-invest into projects",
+      "■ Trade night stays on any NFT marketplace"
+    ],
+    "color": "black"
+  },
+  {
+    "headtxt": "Q1 2023",
+    "contentText": [
+      "■ Bali Club Experiences",
+      "■ Add more Partners and Locations ",
+      "■ Bullish Approach to acquire more Real Estate",
+      "■ Drop own Coin - Rent to own",
+      "■ Expand to new countries ",
+      "■ “Surprises!”"
+    ],
+    "color": "black"
+  }
 ]
