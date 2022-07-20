@@ -254,7 +254,7 @@ const Content = () => {
                 if (index === 1) {
                   return (
                     <EachRoad03 key={index} top={`${index * 165 - 20}px`}>
-                      <Box display={"flex"} flexDirection={"column"} alignItems={"flex-end"}>
+                      <Box display={"flex"} flexDirection={"column"} alignItems={"flex-end"} flex={"1"}>
                         <EachRoadHeader01>
                           <Box display={"flex"} color={each.color}>{each.headtxt}</Box>
                         </EachRoadHeader01>
@@ -274,7 +274,7 @@ const Content = () => {
                 else if (index === 3) {
                   return (
                     <EachRoad03 key={index} top={`${index * 165 + 5}px`}>
-                      <Box display={"flex"} flexDirection={"column"} alignItems={"flex-end"}>
+                      <Box display={"flex"} flexDirection={"column"} alignItems={"flex-end"} flex={"1"}>
                         <EachRoadHeader01>
                           <Box display={"flex"} color={each.color}>{each.headtxt}</Box>
                         </EachRoadHeader01>
@@ -305,7 +305,7 @@ const Content = () => {
                         <Box display={"flex"} width={"55px"} height={'2px'} alignItems={"center"} bgcolor={"#6E5EE1"}>
                         </Box>
                       </Box>
-                      <Box display={"flex"} flexDirection={"column"} alignItems={"flex-start"}>
+                      <Box display={"flex"} flexDirection={"column"} alignItems={"flex-start"} flex={"1"}>
                         <EachRoadHeader>
                           <Box display={"flex"} color={each.color}>{each.headtxt}</Box>
                         </EachRoadHeader>
