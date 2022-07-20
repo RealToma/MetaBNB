@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Box } from '@material-ui/core';
-
 import Content from "./layouts/content/content";
+import Footer from "./layouts/footer";
 import { Web3ReactProvider } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 
@@ -17,8 +17,8 @@ function App() {
     <>
       <Web3ReactProvider getLibrary={getLibrary}>
         <StyledComponent>
-
           <Content />
+          <Footer/>
         </StyledComponent>
       </Web3ReactProvider>
     </>
@@ -30,5 +30,6 @@ const StyledComponent = styled(Box)`
   width: 100%;
   height: 100%;
   background-color: white;
+  flex-direction: column;
 `
 export default App;
