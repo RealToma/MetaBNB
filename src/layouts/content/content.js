@@ -248,7 +248,83 @@ const Content = () => {
         {/* <RoadDesktop01></RoadDesktop01> */}
         <RoadDesktop>
           <HeadText02>Roadmap</HeadText02>
-          {TEXT_ROADMAP.map((each, index) => {
+          <RoadPart02>
+            <LeftRoadmap>
+              {TEXT_ROADMAP.map((each, index) => {
+                if (index === 1) {
+                  return (
+                    <EachRoad03 key={index} top={`${index * 165 - 20}px`}>
+                      <Box display={"flex"} flexDirection={"column"} alignItems={"flex-end"}>
+                        <EachRoadHeader01>
+                          <Box display={"flex"} color={each.color}>{each.headtxt}</Box>
+                        </EachRoadHeader01>
+                        {each.contentText.map((each1, index1) => {
+                          return (
+                            <EachRoadText2 key={index1}>{each1}</EachRoadText2>
+                          )
+                        })}
+                      </Box>
+                      <Box display={"flex"} width={"55px"} height={'50px'} alignItems={"center"} mr="10px" ml={'10px'}>
+                        <Box display={"flex"} width={"55px"} height={'2px'} alignItems={"center"} bgcolor={"#6E5EE1"}>
+                        </Box>
+                      </Box>
+                    </EachRoad03>
+                  )
+                }
+                else if (index === 3) {
+                  return (
+                    <EachRoad03 key={index} top={`${index * 165 + 5}px`}>
+                      <Box display={"flex"} flexDirection={"column"} alignItems={"flex-end"}>
+                        <EachRoadHeader01>
+                          <Box display={"flex"} color={each.color}>{each.headtxt}</Box>
+                        </EachRoadHeader01>
+                        {each.contentText.map((each1, index1) => {
+                          return (
+                            <EachRoadText2 key={index1}>{each1}</EachRoadText2>
+                          )
+                        })}
+                      </Box>
+                      <Box display={"flex"} width={"55px"} height={'50px'} alignItems={"center"} mr="10px" ml={'10px'}>
+                        <Box display={"flex"} width={"55px"} height={'2px'} alignItems={"center"} bgcolor={"#6E5EE1"}>
+                        </Box>
+                      </Box>
+                    </EachRoad03>
+                  )
+                }
+              })}
+            </LeftRoadmap>
+            <CenterRoadmap>
+              <img src={RoadmapBar} alt="" />
+            </CenterRoadmap>
+            <RightRoadmap>
+              {TEXT_ROADMAP.map((each, index) => {
+                if (index % 2 === 0) {
+                  return (
+                    <EachRoad02 key={index} top={`${index * 165 - 10}px`}>
+                      <Box display={"flex"} width={"55px"} height={'50px'} alignItems={"center"} mr="10px" ml={'10px'}>
+                        <Box display={"flex"} width={"55px"} height={'2px'} alignItems={"center"} bgcolor={"#6E5EE1"}>
+                        </Box>
+                      </Box>
+                      <Box display={"flex"} flexDirection={"column"} alignItems={"flex-start"}>
+                        <EachRoadHeader>
+                          <Box display={"flex"} color={each.color}>{each.headtxt}</Box>
+                        </EachRoadHeader>
+                        {each.contentText.map((each1, index1) => {
+                          return (
+                            <EachRoadText1 key={index1}>{each1}</EachRoadText1>
+                          )
+                        })}
+                      </Box>
+
+
+                    </EachRoad02>
+                  )
+                }
+              })}
+            </RightRoadmap>
+          </RoadPart02>
+
+          {/* {TEXT_ROADMAP.map((each, index) => {
             return (
               <EachRoad02 key={index}>
                 <EachRoadHeader>
@@ -262,7 +338,7 @@ const Content = () => {
 
               </EachRoad02>
             )
-          })}
+          })} */}
         </RoadDesktop>
         <RoadMobile01>
           <HeadText04>
@@ -1097,6 +1173,10 @@ const RoadDesktop = styled(Box)`
   width: 100%;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 1000px) {
+        transition: 0.5s;
+        display: none;
+  }
 `
 const RoadDesktop01 = styled(Box)`
   display: flex;
@@ -1141,6 +1221,36 @@ const RoadMobile01 = styled(Box)`
         display: flex;
   }
 `
+const RoadPart02 = styled(Box)`
+  display: flex;
+  width: 100%;
+  height: 900px;
+  align-items: center;
+  margin-top: 50px;
+`
+const LeftRoadmap = styled(Box)`
+  display: flex;
+  flex: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  justify-content: flex-end;
+`
+
+const CenterRoadmap = styled(Box)`
+  display: flex;
+  width: 26px;
+  height: 100%;
+`
+const RightRoadmap = styled(Box)`
+  display: flex;
+  flex: 1;
+  position: relative;  
+  height: 100%;
+  width: 100%;
+
+`
+
 const EachRoad01 = styled(Box)`
   display: flex;
   width: 100%;
@@ -1152,9 +1262,12 @@ const EachRoad02 = styled(Box)`
   display: flex;
   width: 100%;
   position: absolute;
-  flex-direction: column;
-  margin-top: 50px;
-  align-items: center;
+`
+const EachRoad03 = styled(Box)`
+  display: flex;
+  width: 100%;
+  position: absolute;
+  justify-content: flex-end;
 `
 
 const EachRoadHeader = styled(Box)`
@@ -1164,6 +1277,37 @@ const EachRoadHeader = styled(Box)`
   background-color: white;
   border: 1px solid #6E5EE1;
   border-radius: 0px 20px 20px 0px;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 30px;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    font-size: 25px;
+    width: 120px;
+    height: 40px;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-size: 22px;
+    width: 100px;
+    height: 30px;
+  }
+`
+
+const EachRoadHeader01 = styled(Box)`
+  display: flex;
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid #6E5EE1;
+  border-radius: 20px 0px 0px 20px;
   align-items: center;
   justify-content: center;
   font-family: 'Titillium Web';
@@ -1210,6 +1354,54 @@ const EachRoadText = styled(Box)`
     font-size: 14px;
   }
 `
+
+const EachRoadText1 = styled(Box)`
+  display: flex;
+  width: 80%;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 29px;
+  text-align: start;
+  color: #2B2361;
+  margin-top: 10px;
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    font-size: 17px;
+    width: 60%;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-size: 14px;
+  }
+`
+const EachRoadText2 = styled(Box)`
+  display: flex;
+  width: 80%;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 29px;
+  text-align: end;
+  color: #2B2361;
+  margin-top: 10px;
+  @media (max-width: 700px) {
+    transition: 0.5s;
+    font-size: 17px;
+    width: 60%;
+  }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-size: 14px;
+  }
+`
+
 const HeadText04 = styled(Box)`
   display: flex;
   flex-direction: row;
