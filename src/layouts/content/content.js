@@ -4,7 +4,7 @@ import styled from "styled-components";
 // import Navbar from "../navbar/navbar";
 import CustomDropDown from "../../components/CustomDropDown";
 import IMG_BACK_HOUSE from "../../assets/back_house.png";
-import IMG_BACK_MAP from "../../assets/back_map.png";
+import IMG_BACK_MAP from "../../assets/image_back_map.svg";
 import IMG_LOGO from "../../assets/logo01.png";
 import IMG_KITCHEN from "../../assets/LIVING & KITCHEN.png";
 import IMG_ROOM from "../../assets/LIVING ROOM.png";
@@ -24,7 +24,19 @@ import IMGTeamrob from "../../assets/team/rob.png"
 import IMGTeamomac from "../../assets/team/omac.png"
 import IMGTeajuliusb from "../../assets/team/julius.png"
 import RoadmapBar from "../../assets/roadmapBar.svg"
+import IMGPiece01 from "../../assets/piece/01.png";
+import IMGPiece02 from "../../assets/piece/02.png";
+import IMGPiece03 from "../../assets/piece/03.png";
+import IMGPiece04 from "../../assets/piece/04.png";
+import SimpleImageSlider from "react-simple-image-slider";
 
+const images = [
+  IMGPiece04,
+  IMGPiece04,
+  IMGPiece04,
+  IMGPiece04,
+  IMGPiece04,
+];
 
 const Content = () => {
   const mintRef = useRef();
@@ -213,18 +225,22 @@ const Content = () => {
           <Pic01>
             <img
               src={IMG_KITCHEN}
-              width={"152px"}
-              height={"152px"}
+              width={"100%"}
+              height={"100%"}
               style={{ borderRadius: "100%" }}
               alt=""
             />
           </Pic01>
           <Line01></Line01>
+          <Position01>
+            {/* <Circle01></Circle01> */}
+            <PositionText01>Pantai Lima</PositionText01>
+          </Position01>
           <Pic02>
             <img
               src={IMG_ROOM}
-              width={"168px"}
-              height={"168px"}
+              width={"100%"}
+              height={"100%"}
               style={{ borderRadius: "100%" }}
               alt=""
             />
@@ -232,18 +248,51 @@ const Content = () => {
           <Pic03>
             <img
               src={IMG_OUTDOOR}
-              width={"244px"}
-              height={"244px"}
+              width={"100%"}
+              height={"100%"}
               style={{ borderRadius: "100%" }}
               alt=""
             />
           </Pic03>
         </PicPart01>
-        <Position01>
+        {/* <Position01>
           <Circle01></Circle01>
           <PositionText01>Pantai Lima</PositionText01>
-        </Position01>
+        </Position01> */}
       </Back02Component>
+      <ImageShowPart01>
+        <TopImagePart01>
+          <LeftImagePart01>
+            <img src={IMGPiece01} width={'100%'} alt="" />
+          </LeftImagePart01>
+          <RightImagePart01>
+            <TopImagePart02>
+              <img src={IMGPiece02} width={'100%'} alt="" />
+            </TopImagePart02>
+            <DownImagePart02>
+              <img src={IMGPiece03} width={'100%'} alt="" />
+            </DownImagePart02>
+          </RightImagePart01>
+        </TopImagePart01>
+        <DownImagePart01>
+          <SimpleImageSlider
+            width={"100%"}
+            height={550}
+            images={images}
+            showBullets={true}
+            showNavs={true}
+          />
+        </DownImagePart01>
+        <DownImagePart03>
+          <SimpleImageSlider
+            width={"100%"}
+            height={300}
+            images={images}
+            showBullets={true}
+            showNavs={true}
+          />
+        </DownImagePart03>
+      </ImageShowPart01>
       <RoadMapPart01 ref={roadmapRef}>
         {/* <RoadDesktop01></RoadDesktop01> */}
         <RoadDesktop>
@@ -871,11 +920,11 @@ const HeadText03 = styled(Box)`
   /* text-fill-color: transparent; */
   @media (max-width: 1300px) {
     transition: 0.5s;
-    font-size: 150px;
+    font-size: 90px;
   }
   @media (max-width: 1000px) {
     transition: 0.5s;
-    font-size: 110px;
+    font-size: 80px;
   }
   @media (max-width: 700px) {
     transition: 0.5s;
@@ -1050,115 +1099,154 @@ const ContentText03 = styled(Box)`
   }
 `;
 const PicPart01 = styled(Box)`
-  display: flex;
-  position: absolute;
-  /* justify-content: center; */
-  align-items: center;
-  left: 35%;
-  top: 45%;
-  @media (max-width: 1400px) {
-    transition: 0.5s;
-    left: 30%;
+    display: flex;
+    position: absolute;
+    /* justify-content: center; */
+    align-items: center;
+    left: 37%;
+    top: 60%;
+    @media (max-width: 1670px) {
+        transition: 0.5s;
+        left: 35%;
+    top: 58%;
   }
-  @media (max-width: 1200px) {
-    transition: 0.5s;
-    left: 28%;
+    @media (max-width: 1500px) {
+        transition: 0.5s;
+        left: 33%;
+        top: 57%;
   }
-  @media (max-width: 1000px) {
-    transition: 0.5s;
-    left: 20%;
+  @media (max-width: 800px) {
+        transition: 0.5s;
+        left: 35%;
+        top: 60%;
   }
-  @media (max-width: 700px) {
-    transition: 0.5s;
-    left: 15%;
-  }
-  @media (max-width: 400px) {
-    transition: 0.5s;
-    left: 0%;
-  }
-`;
+`
 const Pic01 = styled(Box)`
-  display: flex;
-  border-radius: 100%;
-`;
+    display: flex;
+    border-radius: 100%;
+    width: 152px;
+    height: 152px;
+    @media (max-width: 800px) {
+        transition: 0.5s;
+        width: 100px;
+        height: 100px;
+  }
+`
 
 const Pic02 = styled(Box)`
-  display: flex;
-  border-radius: 100%;
-  position: absolute;
-  left: -200px;
-  top: -80px;
-  @media (max-width: 1000px) {
-    transition: 0.5s;
-    display: none;
+    display: flex;
+    border-radius: 100%;
+    position: absolute;
+    left: -200px;
+    top: -80px;
+    width: 168px;
+    height: 168px;
+    @media (max-width: 800px) {
+        transition: 0.5s;
+        left: -130px;
+    top: -40px;
+        width: 110px;
+        height: 110px;
   }
-`;
+  @media (max-width: 450px) {
+        transition: 0.5s;
+        left: -90px;
+    top: -20px;
+        width: 80px;
+        height: 80px;
+  }
+`
 const Pic03 = styled(Box)`
-  display: flex;
-  border-radius: 100%;
-  position: absolute;
-  left: -200px;
-  bottom: -200px;
-  @media (max-width: 1000px) {
-    transition: 0.5s;
-    display: none;
+    display: flex;
+    border-radius: 100%;
+    position: absolute;
+    left: -200px;
+    bottom: -200px;
+    width: 244px;
+    height: 244px;
+    @media (max-width: 800px) {
+        transition: 0.5s;
+        left: -140px;
+    bottom: -160px;
+        width: 180px;
+        height: 180px;
   }
-`;
+  @media (max-width: 450px) {
+        transition: 0.5s;
+        left: -100px;
+    bottom: -120px;
+        width: 120px;
+        height: 120px;
+  }
+`
 
 const Line01 = styled(Box)`
-  display: flex;
-  width: 170px;
-  height: 2px;
-  background-color: #6e5ee1;
-  margin-left: 20px;
+    display: flex;
+    width: 170px;
+    height: 2px;
+    background-color: #6E5EE1;
+    margin-left: 20px;
+    @media (max-width: 1330px) {
+        transition: 0.5s;
+        width: 150px;
+  }
+  @media (max-width: 1200px) {
+        transition: 0.5s;
+        width: 120px;
+  }
   @media (max-width: 1000px) {
-    transition: 0.5s;
-    width: 150px;
+        transition: 0.5s;
+        width: 90px;
   }
-  @media (max-width: 700px) {
-    transition: 0.5s;
-    width: 100px;
+  @media (max-width: 650px) {
+        transition: 0.5s;
+        width: 50px;
   }
-  @media (max-width: 500px) {
-    transition: 0.5s;
-    width: 50px;
+  @media (max-width: 450px) {
+        transition: 0.5s;
+        display: none;
   }
-  
-`;
+`
 const Position01 = styled(Box)`
-  display: flex;
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  border: 1px solid rgba(227, 61, 119, 0.3);
-  border-radius: 100%;
-  justify-content: center;
-  align-items: center;
-  left: 55%;
-  top: 47%;
-`;
+    display: flex;
+    position: relative;
+    width: 28px;
+    height: 28px;
+    /* border: 1px solid rgba(227, 61, 119, 0.3); */
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+`
 const Circle01 = styled(Box)`
-  display: flex;
-  background: #e33d77;
-  border-radius: 100%;
-  width: 18px;
-  height: 18px;
-`;
+    display: flex;
+    background: #E33D77;
+    border-radius: 100%;
+    width: 18px;
+    height: 18px;
+`
 const PositionText01 = styled(Box)`
-  display: flex;
-  position: absolute;
-  white-space: nowrap;
-  bottom: -30px;
-  font-family: "Titillium Web";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 27px;
-  /* text-align: center; */
-  text-transform: uppercase;
-  color: #858585;
-`;
-
+    display: flex;
+    position: absolute;
+    white-space: nowrap;
+    bottom: -40px;
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    /* text-align: center; */
+    text-transform: uppercase;
+    color: #858585;
+    @media (max-width: 450px) {
+        transition: 0.5s;
+        left: 0px;
+  }
+  @media (max-width: 350px) {
+        transition: 0.5s;
+        left: -20px;
+  }
+`
 const RoadMapPart01 = styled(Box)`
     display: flex;
     width: 100%;
@@ -1689,6 +1777,56 @@ const EachLink01 = styled(Box)`
         transition: 0.5s;
         color: rgb(249,205,128);
     }
+`
+
+const ImageShowPart01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top:50px
+`
+const TopImagePart01 = styled(Box)`
+  display: flex;
+  width:100%;
+`
+const LeftImagePart01 = styled(Box)`
+  display: flex;
+  flex: 2;
+  width: 100%;
+  margin-right: 30px;
+`
+const RightImagePart01 = styled(Box)`
+  display: flex;
+  flex:1;
+  width:100%;
+  flex-direction: column;
+`
+const TopImagePart02 = styled(Box)`
+  display: flex;
+  width:100%;
+  flex:1;
+`
+const DownImagePart02 = styled(Box)`
+  display: flex;
+  width:100%;
+  flex:1;
+  margin-top: 30px;
+`
+const DownImagePart01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  margin-top:30px;
+  @media (max-width: 700px) {
+    display: none;
+  }
+`
+const DownImagePart03 = styled(Box)`
+  display: none;
+  width: 100%;
+  margin-top:30px;
+  @media (max-width: 700px) {
+    display: flex;
+  }
 `
 
 export default Content;
