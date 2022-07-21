@@ -1103,8 +1103,13 @@ const PicPart01 = styled(Box)`
     position: absolute;
     /* justify-content: center; */
     align-items: center;
+    left: 38%;
+    top: 61%;
+    @media (max-width: 1770px) {
+        transition: 0.5s;
     left: 37%;
     top: 60%;
+  }
     @media (max-width: 1670px) {
         transition: 0.5s;
         left: 35%;
