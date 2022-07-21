@@ -9,14 +9,14 @@ import IMG_LOGO from "../../assets/logo01.png";
 import IMG_KITCHEN from "../../assets/LIVING & KITCHEN.png";
 import IMG_ROOM from "../../assets/LIVING ROOM.png";
 import IMG_OUTDOOR from "../../assets/OUT DOOR AREA.png";
-import IMG_ROADMAP from "../../assets/roadmap.png"
+// import IMG_ROADMAP from "../../assets/roadmap.png"
 import TEXT_FAQ from "../../assets/data/faq_text.json";
 import TEXT_ROADMAP from "../../assets/data/roadmap.json"
 // import { GiArchBridge, GiMushroom } from "react-icons/gi";
 // import { BiBook, BiMessageDetail } from "react-icons/bi";
 // import { RiBug2Fill, RiMacbookLine, RiGovernmentLine } from "react-icons/ri";
 import { FaGithub, FaTwitter, FaDiscord, FaMedium } from "react-icons/fa";
-import { MdOutlineAccountBalanceWallet, MdMenu } from "react-icons/md";
+import { MdMenu } from "react-icons/md";
 import IMGTeamseb from "../../assets/team/seb.png"
 import IMGTeamexe from "../../assets/team/exe.png"
 import IMGTeammad from "../../assets/team/mad.png"
@@ -340,7 +340,9 @@ const Content = () => {
                     </EachRoad03>
                   )
                 }
-              })}
+                return <></>
+              })
+              }
             </LeftRoadmap>
             <CenterRoadmap>
               <img src={RoadmapBar} alt="" />
@@ -369,6 +371,7 @@ const Content = () => {
                     </EachRoad02>
                   )
                 }
+                return <></>
               })}
             </RightRoadmap>
           </RoadPart02>
@@ -1223,13 +1226,13 @@ const Position01 = styled(Box)`
     align-items: center;
     margin-left: 20px;
 `
-const Circle01 = styled(Box)`
-    display: flex;
-    background: #E33D77;
-    border-radius: 100%;
-    width: 18px;
-    height: 18px;
-`
+// const Circle01 = styled(Box)`
+//     display: flex;
+//     background: #E33D77;
+//     border-radius: 100%;
+//     width: 18px;
+//     height: 18px;
+// `
 const PositionText01 = styled(Box)`
     display: flex;
     position: absolute;
@@ -1271,38 +1274,27 @@ const RoadDesktop = styled(Box)`
         display: none;
   }
 `
-const RoadDesktop01 = styled(Box)`
-  display: flex;
-  width: 60%;
-  height: 1100px;
-  background-image: url(${IMG_ROADMAP});
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  @media (max-width: 1400px) {
-        transition: 0.5s;
-        height: 1000px;
-    }
-    @media (max-width: 1200px) {
-        transition: 0.5s;
-        height: 900px;
-    }
-    @media (max-width: 1000px) {
-        transition: 0.5s;
-        display: none;
-    }
-    /* @media (max-width: 700px) {
-        transition: 0.5s;
-        height: 700px;
-    }
-    @media (max-width: 500px) {
-        transition: 0.5s;
-        height: 500px;
-    }
-    @media (max-width: 400px) {
-        transition: 0.5s;
-        height: 350px;
-    } */
-`
+// const RoadDesktop01 = styled(Box)`
+//   display: flex;
+//   width: 60%;
+//   height: 1100px;
+//   background-image: url(${IMG_ROADMAP});
+//   background-size: 100% 100%;
+//   background-repeat: no-repeat;
+//   @media (max-width: 1400px) {
+//         transition: 0.5s;
+//         height: 1000px;
+//     }
+//     @media (max-width: 1200px) {
+//         transition: 0.5s;
+//         height: 900px;
+//     }
+//     @media (max-width: 1000px) {
+//         transition: 0.5s;
+//         display: none;
+//     }
+
+// `
 const RoadMobile01 = styled(Box)`
   display: none;
   width: 100%;
