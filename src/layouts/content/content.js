@@ -512,7 +512,6 @@ const Content = () => {
                 handleClose();
               }}
             >
-              {/* <BiMessageDetail fontSize={"1.5rem"} /> */}
               <EachLink02Txt>Location</EachLink02Txt>
             </EachLink01>
             <EachLink01
@@ -521,7 +520,6 @@ const Content = () => {
                 handleClose();
               }}
             >
-              {/* <RiGovernmentLine fontSize={"1.5rem"} /> */}
               <EachLink02Txt>ROADMAP</EachLink02Txt>
             </EachLink01>
             <EachLink01
@@ -530,7 +528,6 @@ const Content = () => {
                 handleClose();
               }}
             >
-              {/* <BiBook fontSize={"1.5rem"} /> */}
               <EachLink02Txt>FAQ</EachLink02Txt>
             </EachLink01>
             <EachLink01
@@ -539,7 +536,6 @@ const Content = () => {
                 handleClose();
               }}
             >
-              {/* <RiBug2Fill fontSize={"1.5rem"} /> */}
               <EachLink02Txt>TEAM</EachLink02Txt>
             </EachLink01>
           </LinkList>
@@ -685,7 +681,6 @@ const EachLink = styled(Box)`
     text-decoration-color: #E7428D;
     cursor: pointer;
     color: #2b2361;
-    /* border-bottom: 1px solid rgb(249,205,128); */
   }
 `;
 const WalletBox01 = styled(Box)`
@@ -710,7 +705,6 @@ color: #FFFFFF;
     cursor: pointer;
     transition: 0.5s;
     background-color: #2b2361;
-    /* box-shadow: 1px 1px 1px rgb(255 255 255 / 30%); */
   }
 `;
 
@@ -739,7 +733,6 @@ color: #342361;
     transition: 0.5s;
     background-color: #2B2361;
     color: white;
-    /* box-shadow: 1px 1px 1px rgb(255 255 255 / 30%); */
   }
   @media (max-width: 500px) {
     transition: 0.5s;
@@ -772,7 +765,6 @@ text-transform: uppercase;
     transition: 0.5s;
     background-color: #2B2361;
     color: white;
-    /* box-shadow: 1px 1px 1px rgb(255 255 255 / 30%); */
   }
   @media (max-width: 500px) {
     transition: 0.5s;
@@ -791,13 +783,11 @@ const NFTCollectionPart01 = styled(Box)`
 `;
 const HeadText01 = styled(Box)`
   display: flex;
-  /* width: 50%; */
   justify-content: center;
   font-family: "Zen Tokyo Zoo";
   font-style: normal;
   font-weight: 400;
   font-size: 108px;
-  /* line-height: 101px;  */
   text-align: center;
   text-transform: uppercase;
   background: linear-gradient(
@@ -812,8 +802,6 @@ const HeadText01 = styled(Box)`
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* background-clip: text; */
-  /* text-fill-color: transparent; */
   @media (max-width: 1300px) {
     transition: 0.5s;
     font-weight: 400;
@@ -852,14 +840,11 @@ const HeadText01 = styled(Box)`
 `;
 const HeadText02 = styled(Box)`
   display: flex;
-  /* width: 100%; */
   justify-content: center;
   font-family: "Zen Tokyo Zoo";
   font-style: normal;
   font-weight: 400;
   font-size: 108px;
-  /* line-height: 101px; */
-  /* identical to box height, or 94% */
   text-transform: uppercase;
   background: linear-gradient(
     269.73deg,
@@ -874,7 +859,6 @@ const HeadText02 = styled(Box)`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  /* text-fill-color: transparent; */
   @media (max-width: 1300px) {
     transition: 0.5s;
     font-weight: 400;
@@ -901,8 +885,6 @@ const HeadText03 = styled(Box)`
   font-style: normal;
   font-weight: 400;
   font-size: 98px;
-  /* line-height: 101px; */
-  /* identical to box height, or 51% */
 
   text-align: center;
   text-transform: uppercase;
@@ -920,7 +902,6 @@ const HeadText03 = styled(Box)`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  /* text-fill-color: transparent; */
   @media (max-width: 1300px) {
     transition: 0.5s;
     font-size: 90px;
@@ -940,7 +921,6 @@ const HeadText03 = styled(Box)`
 `;
 
 const ContentText01 = styled(Box)`
-  /* display: flex; */
   width: 35%;
   justify-content: center;
   font-family: "Titillium Web";
@@ -1104,7 +1084,6 @@ const ContentText03 = styled(Box)`
 const PicPart01 = styled(Box)`
     display: flex;
     position: absolute;
-    /* justify-content: center; */
     align-items: center;
     left: 38%;
     top: 61%;
