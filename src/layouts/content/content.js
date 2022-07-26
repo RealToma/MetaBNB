@@ -75,7 +75,7 @@ const Content = () => {
                 <Box display={"flex"}>
                   <img src={IMG_LOGO} width={"33px"} height={"24px"} alt="" />
                 </Box>
-                <LogoText>metabnb</LogoText>
+                <LogoText>METAVACATION</LogoText>
               </LogoPart01>
               <PageLink>
                 <EachLink onClick={() => {
@@ -124,7 +124,7 @@ const Content = () => {
               <Box display={"flex"}>
                 <img src={IMG_LOGO} width={"33px"} height={"24px"} alt="" />
               </Box>
-              <LogoText>metabnb</LogoText>
+              <LogoText>METAVACATION</LogoText>
             </LogoPart01>
             <PageLink>
               <EachLink onClick={() => {
@@ -166,7 +166,7 @@ const Content = () => {
             </ConnectWallet01>
           </HeaderBar>
         }
-        <NFTCollectionPart01 ref={mintRef}>
+        <NFTCollectionPart01 ref={mintRef} mt={'200px'} mb={'100px'}>
           <HeadText01>Bringing real life</HeadText01>
           <HeadText01>assets on to the</HeadText01>
           <HeadText01>blockchain</HeadText01>
@@ -177,13 +177,13 @@ const Content = () => {
               This PFP NFT gives you access to all benefits mentioned below.
             </span>
           </ContentText01>
-          <ButtonBox01>
+          {/* <ButtonBox01>
             <MintNFTPassBTN>Mint NFT Pass</MintNFTPassBTN>
             <ReserverBTN>Reserve Property</ReserverBTN>
-          </ButtonBox01>
+          </ButtonBox01> */}
         </NFTCollectionPart01>
-        <NFTCollectionPart01 ref={howtoRef}>
-          <HeadText02>HOW TO</HeadText02>
+        <NFTCollectionPart01 ref={howtoRef} mt={'50px'} mb={'100px'}>
+          <HeadText02>What do i get</HeadText02>
           <ContentText02>
             Owning a METABNB NFT gives you access to multiple experiences including:
           </ContentText02>
@@ -220,7 +220,14 @@ const Content = () => {
         </NFTCollectionPart01>
       </Back01Component>
       <Back02Component ref={locationRef}>
-        <HeadText03>Location</HeadText03>
+        <Box display={"flex"} flex="1"  alignItems={'center'} flexDirection={'column'}>
+          <HeadText03>
+            Location
+          </HeadText03>
+          <Box display={"flex"} width={'80%'} border={'1px dashed #26AAB8'}></Box>
+          <LocationTxt01>Bali, Pererenan, Pantai Lima</LocationTxt01>
+
+        </Box>
         <PicPart01>
           <Pic01>
             <img
@@ -314,7 +321,7 @@ const Content = () => {
                         })}
                       </Box>
                       <Box display={"flex"} width={"55px"} height={'50px'} alignItems={"center"} mr="10px" ml={'10px'}>
-                        <Box display={"flex"} width={"55px"} height={'2px'} alignItems={"center"} bgcolor={"#6E5EE1"}>
+                        <Box display={"flex"} width={"55px"} height={'2px'} bgcolor={"white"} alignItems={"center"} borderBottom={'2px dashed #303FBA'}>
                         </Box>
                       </Box>
                     </EachRoad03>
@@ -334,7 +341,7 @@ const Content = () => {
                         })}
                       </Box>
                       <Box display={"flex"} width={"55px"} height={'50px'} alignItems={"center"} mr="10px" ml={'10px'}>
-                        <Box display={"flex"} width={"55px"} height={'2px'} alignItems={"center"} bgcolor={"#6E5EE1"}>
+                        <Box display={"flex"} width={"55px"} height={'2px'} alignItems={"center"} borderBottom={'2px dashed #303FBA'}>
                         </Box>
                       </Box>
                     </EachRoad03>
@@ -353,7 +360,7 @@ const Content = () => {
                   return (
                     <EachRoad02 key={index} top={`${index * 165 - 10}px`}>
                       <Box display={"flex"} width={"55px"} height={'50px'} alignItems={"center"} mr="10px" ml={'10px'}>
-                        <Box display={"flex"} width={"55px"} height={'2px'} alignItems={"center"} bgcolor={"#6E5EE1"}>
+                        <Box display={"flex"} width={"55px"} height={'2px'} alignItems={"center"} borderBottom={'2px dashed #303FBA'}>
                         </Box>
                       </Box>
                       <Box display={"flex"} flexDirection={"column"} alignItems={"flex-start"} flex={"1"}>
@@ -366,8 +373,6 @@ const Content = () => {
                           )
                         })}
                       </Box>
-
-
                     </EachRoad02>
                   )
                 }
@@ -626,11 +631,15 @@ const LogoPart01 = styled(Box)`
 `;
 const LogoText = styled(Box)`
   display: flex;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 19.4948px;
-  line-height: 30px;
-  color: #2b2361;
+  font-family: 'Titillium Web';
+font-style: normal;
+font-weight: 600;
+font-size: 19.4948px;
+line-height: 30px;
+/* identical to box height */
+
+align-items: center;
+  color: #444444;
   margin-left: 5px;
   @media (max-width: 500px) {
     transition: 0.5s;
@@ -646,7 +655,7 @@ const ConnectWallet01 = styled(Box)`
 
 const PageLink = styled(Box)`
   display: flex;
-  flex: 3;
+  flex: 1;
   align-items: center;
   justify-content: center;
   @media (max-width: 1300px) {
@@ -660,37 +669,47 @@ const PageLink = styled(Box)`
 `;
 const EachLink = styled(Box)`
   display: flex;
-  flex: 1;
+  /* padding-bottom: 5px; */
+  /* flex: 1; */
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
-  color: #2b2361;
-  font-family: "Titillium Web";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 21px;
-  display: flex;
-  align-items: center;
-  text-align: center;
+  font-family: 'Titillium Web';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 21px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+/* Dark Black */
+
+color: #444444;
   text-transform: uppercase;
-  text-decoration: underline 0.15em rgba(255, 255, 255, 0);
-  transition: text-decoration-color 500ms;
+  /* text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+  transition: text-decoration-color 500ms; */
+
+  border-bottom: 1px dashed rgba(0,0,0, 0);
+  cursor: pointer;
   &:hover {
-    text-decoration-color: #E7428D;
-    cursor: pointer;
-    color: #2b2361;
+    transition: .5s;
+    border-bottom: 1px dashed #26AAB8;
+
+
   }
 `;
+
 const WalletBox01 = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 88px;
   height: 32px;
-  background: black;
-  border-radius: 20px;
+  background: #444444;
+  border-radius: 56px;
   font-family: 'Titillium Web';
 font-style: normal;
 font-weight: 700;
@@ -699,12 +718,12 @@ line-height: 21px;
 align-items: center;
 text-align: center;
 text-transform: uppercase;
-border: 1px solid black;
-color: #FFFFFF;
+border: 1px solid #444444;
+color: #22DAB9;
   &:hover {
     cursor: pointer;
     transition: 0.5s;
-    background-color: #2b2361;
+    background-color: #444444;
   }
 `;
 
@@ -715,9 +734,9 @@ const WalletBox02 = styled(Box)`
   margin-left: 10px;
   width: 145px;
   height: 32px;
-  background: white;
-  border: 1px solid #2B2361;
-  border-radius: 20px;
+  /* background: white; */
+  border: 1px dashed #444444;
+  border-radius: 56px;
   font-family: 'Titillium Web';
 font-style: normal;
 font-weight: 700;
@@ -727,11 +746,11 @@ align-items: center;
 text-align: center;
 text-transform: uppercase;
 
-color: #342361;
+color: #444444;
   &:hover {
     cursor: pointer;
     transition: 0.5s;
-    background-color: #2B2361;
+    background-color: #444444;
     color: white;
   }
   @media (max-width: 500px) {
@@ -748,7 +767,7 @@ const WalletBox03 = styled(Box)`
   width: 88px;
   height: 32px;
   background: white;
-  border: 1px solid #2B2361;
+  border: 1px solid #444444;
   border-radius: 20px;
   font-family: 'Titillium Web';
 font-style: normal;
@@ -763,7 +782,7 @@ text-transform: uppercase;
   &:hover {
     cursor: pointer;
     transition: 0.5s;
-    background-color: #2B2361;
+    background-color: #444444;
     color: white;
   }
   @media (max-width: 500px) {
@@ -778,8 +797,7 @@ const NFTCollectionPart01 = styled(Box)`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  margin-top: 200px;
-  margin-bottom: 200px;
+
 `;
 const HeadText01 = styled(Box)`
   display: flex;
@@ -790,16 +808,9 @@ const HeadText01 = styled(Box)`
   font-size: 108px;
   text-align: center;
   text-transform: uppercase;
-  background: linear-gradient(
-    269.73deg,
-    #6d5de0 34.58%,
-    #b24eb4 45.18%,
-    #e7428e 56.14%,
-    #df3966 67.45%,
-    #d9383b 78.76%,
-    #ec865b 90.07%,
-    #fcc978 102.44%
-  );
+  
+
+background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 92.58%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   @media (max-width: 1300px) {
@@ -846,16 +857,7 @@ const HeadText02 = styled(Box)`
   font-weight: 400;
   font-size: 108px;
   text-transform: uppercase;
-  background: linear-gradient(
-    269.73deg,
-    #6d5de0 34.58%,
-    #b24eb4 45.18%,
-    #e7428e 56.14%,
-    #df3966 67.45%,
-    #d9383b 78.76%,
-    #ec865b 90.07%,
-    #fcc978 102.44%
-  );
+background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 92.58%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -880,25 +882,16 @@ const HeadText02 = styled(Box)`
     font-size: 40px;
   }
 `;
+
 const HeadText03 = styled(Box)`
+  display: flex;
   font-family: "Zen Tokyo Zoo";
   font-style: normal;
   font-weight: 400;
   font-size: 98px;
-
   text-align: center;
   text-transform: uppercase;
-
-  background: linear-gradient(
-    269.73deg,
-    #6d5de0 34.58%,
-    #b24eb4 45.18%,
-    #e7428e 56.14%,
-    #df3966 67.45%,
-    #d9383b 78.76%,
-    #ec865b 90.07%,
-    #fcc978 102.44%
-  );
+background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 92.58%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -929,7 +922,7 @@ const ContentText01 = styled(Box)`
   font-size: 18px;
   line-height: 27px;
   text-transform: uppercase;
-  color: #2b2361;
+  color: #444444;
   margin-top: 70px;
   @media (max-width: 1300px) {
     transition: 0.5s;
@@ -977,8 +970,8 @@ const MintNFTPassBTN = styled(Box)`
   cursor: pointer;
   &:hover {
     transition: 0.5s;
-    background-color: #2b2361;
-    border: 1px solid #2b2361;
+    background-color: #444444;
+    border: 1px solid #444444;
   }
   margin-right: 10px;
   @media (max-width: 500px) {
@@ -1001,9 +994,9 @@ const ReserverBTN = styled(Box)`
   justify-content: center;
   align-items: center;
   background: white;
-  border: 1px solid #2b2361;
+  border: 1px solid #444444;
   border-radius: 6px;
-  color: #2b2361;
+  color: #444444;
   text-transform: uppercase;
   cursor: pointer;
   &:hover {
@@ -1034,7 +1027,7 @@ const ContentText02 = styled(Box)`
   font-size: 18px;
   line-height: 27px;
   text-transform: uppercase;
-  color: #2b2361;
+  color: #444444;
   margin-top: 70px;
   @media (max-width: 1300px) {
     transition: 0.5s;
@@ -1062,7 +1055,7 @@ const ContentText03 = styled(Box)`
   font-size: 18px;
   line-height: 27px;
   text-transform: uppercase;
-  color: #2b2361;
+  color: #444444;
   margin-top: 50px;
   @media (max-width: 1300px) {
     transition: 0.5s;
@@ -1170,8 +1163,9 @@ const Pic03 = styled(Box)`
 const Line01 = styled(Box)`
     display: flex;
     width: 170px;
-    height: 2px;
-    background-color: #6E5EE1;
+    height: 1px;
+    border-bottom: 1px dashed #77BCB5;
+    /* background-color: #6E5EE1; */
     margin-left: 20px;
     @media (max-width: 1330px) {
         transition: 0.5s;
@@ -1339,7 +1333,7 @@ const EachRoadHeader = styled(Box)`
   width: 150px;
   height: 50px;
   background-color: white;
-  border: 1px solid #6E5EE1;
+  border: 1px dashed #303FBA;
   border-radius: 0px 20px 20px 0px;
   align-items: center;
   justify-content: center;
@@ -1370,7 +1364,7 @@ const EachRoadHeader01 = styled(Box)`
   width: 150px;
   height: 50px;
   background-color: white;
-  border: 1px solid #6E5EE1;
+  border: 1px dashed #303FBA;
   border-radius: 20px 0px 0px 20px;
   align-items: center;
   justify-content: center;
@@ -1406,7 +1400,7 @@ const EachRoadText = styled(Box)`
   font-size: 19px;
   line-height: 29px;
   text-align: start;
-  color: #2B2361;
+  color: #444444;
   margin-top: 10px;
   @media (max-width: 700px) {
     transition: 0.5s;
@@ -1430,7 +1424,7 @@ const EachRoadText1 = styled(Box)`
   font-size: 19px;
   line-height: 29px;
   text-align: start;
-  color: #2B2361;
+  color: #444444;
   margin-top: 10px;
   @media (max-width: 700px) {
     transition: 0.5s;
@@ -1453,7 +1447,7 @@ const EachRoadText2 = styled(Box)`
   font-size: 19px;
   line-height: 29px;
   text-align: end;
-  color: #2B2361;
+  color: #444444;
   margin-top: 10px;
   @media (max-width: 700px) {
     transition: 0.5s;
@@ -1475,16 +1469,9 @@ const HeadText04 = styled(Box)`
   font-weight: 400;
   font-size: 108px;
   text-transform: uppercase;
-  background: linear-gradient(
-    269.73deg,
-    #6d5de0 34.58%,
-    #b24eb4 45.18%,
-    #e7428e 56.14%,
-    #df3966 67.45%,
-    #d9383b 78.76%,
-    #ec865b 90.07%,
-    #fcc978 102.44%
-  );
+  
+
+background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 92.58%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1606,7 +1593,7 @@ line-height: 35px;
 align-items: center;
 text-align: center;
 text-transform: uppercase;
-color: #2B2361;
+color: #444444;
   margin-top: 30px;
 `;
 const TeamText02 = styled(Box)`
@@ -1622,7 +1609,7 @@ line-height: 21px;
 align-items: center;
 text-align: center;
 
-color: #2B2361;
+color: #444444;
   margin-top: 10px;
 `;
 
@@ -1637,7 +1624,7 @@ const ModalComponent = styled(Box)`
   align-items: center;
   background-color: white;
   font-family: "Titillium Web", sans-serif;
-  color: #2b2361;
+  color: #444444;
   @media (min-width: 1000px) {
     display: none;
   }
@@ -1735,7 +1722,7 @@ const CustomBtn2 = styled(Box)`
   &:hover {
     cursor: pointer;
     transition: 0.5s;
-    background-color: #2b2361;
+    background-color: #444444;
   }
   @media (max-width: 1200px) {
     display: flex;
@@ -1759,7 +1746,7 @@ const ImageShowPart01 = styled(Box)`
   display: flex;
   width: 100%;
   flex-direction: column;
-  margin-top:50px
+  margin-top:50px;
 `
 const TopImagePart01 = styled(Box)`
   display: flex;
@@ -1803,6 +1790,20 @@ const DownImagePart03 = styled(Box)`
   @media (max-width: 700px) {
     display: flex;
   }
+`
+const LocationTxt01 = styled(Box)`
+  display: flex;
+  margin-top: 10px;
+font-family: 'Titillium Web';
+font-style: normal;
+font-weight: 700;
+font-size: 19px;
+line-height: 29px;
+/* identical to box height */
+
+text-align: center;
+text-transform: uppercase;
+color: #444444 !important;
 `
 
 export default Content;

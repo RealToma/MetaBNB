@@ -24,7 +24,7 @@ const StyledComponent = styled(Box)`
     align-items: center;
     justify-content: center;
   color: white;
-  background: #1C1457;
+  background: #1A1E47;
   margin-top: 200px;
 `
 const FooterBox = styled(Box)`
@@ -49,23 +49,28 @@ const LeftPart = styled(Box)`
     display: flex;
     align-items: center;
     font-family: 'Titillium Web';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 21px;
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 21px;
+color: #FFFFFF;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 `
 const CenterPart = styled(Box)`
     display: flex;
-    width: 120px;
+    padding:  10px  30px  10px 30px;
     justify-content: center;
     align-items: center;
+    width: 120px;
     font-family: 'Titillium Web';
 font-style: normal;
 font-weight: 700;
 font-size: 16px;
 line-height: 24px;
-border: 1px solid #FFFFFF;
+text-align: center;
+color: #FFFFFF;
 border-radius: 50px;
+border: 1px dashed #23CDB8;
 `
 const RightPart = styled(Box)`
     display: flex;

@@ -19,7 +19,7 @@ const CustomDropDown = ({ width, h_text, c_text }) => {
             set_show(!flag_show);
           }}
         >
-          {flag_show === false ? <FiPlus /> : <FiMinus color={"#6E5EE1"} />}
+          {flag_show === false ? <FiPlus /> : <FiMinus color={"#444444"} />}
         </PlusBox>
       </Box>
       {flag_show === false ? <></> : <CText>{c_text}</CText>}
@@ -38,7 +38,7 @@ const HText = styled(Box)`
   line-height: 37px;
   display: flex;
   align-items: center;
-  color: #000000;
+  color: #444444;
   @media (max-width: 1200px) {
       transition: 0.5s;
       font-size: 22px;
@@ -64,7 +64,7 @@ const CText = styled(Box)`
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
-  color: #2b2361;
+  color: #444444;
   margin-top: 50px;
   transition: .5s;
   @media (max-width: 1200px) {
@@ -91,7 +91,7 @@ const PlusBox = styled(Box)`
   align-items: center;
   font-size: 1.8rem;
   font-weight: bold;
-  color: #ee8b5e;
+  color: #25B3B8;
   cursor: pointer;
   @media (max-width: 1200px) {
       transition: 0.5s;
