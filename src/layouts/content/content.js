@@ -51,20 +51,37 @@ const Content = () => {
   const handleClose = () => setOpen(false);
 
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollFlag, setScrollFlag] = useState(false);
+  const [sideScrollFlag, setSideScrollFlag] = useState(false);
   const handleScroll = () => {
     const position = window.pageYOffset;
+    setScrollFlag(true);
     setScrollPosition(position);
   };
 
+
   useEffect(() => {
+    if (scrollFlag === false) {
+      setInterval(() => {
+        setSideScrollFlag(true);
+      }, 5000);
+    }
+    else {
+      setSideScrollFlag(false);
+    }
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
+
   }, []);
 
   return (
     <StyledComponent>
+      {/* {
+        sideScrollFlag?<SideScrollBar01>123132</SideScrollBar01>:<></>
+      } */}
+      
       <Back01Component>
         {scrollPosition >= 50 ?
           <HeaderBarScroll>
@@ -220,7 +237,7 @@ const Content = () => {
         </NFTCollectionPart01>
       </Back01Component>
       <Back02Component ref={locationRef}>
-        <Box display={"flex"} flex="1"  alignItems={'center'} flexDirection={'column'}>
+        <Box display={"flex"} flex="1" alignItems={'center'} flexDirection={'column'}>
           <HeadText03>
             Location
           </HeadText03>
@@ -568,6 +585,7 @@ const Content = () => {
 
 const StyledComponent = styled(Box)`
   display: flex;
+  position: relative;
   width: 100%;
   flex-direction: column;
   color: white;
@@ -580,9 +598,9 @@ const Back01Component = styled(Box)`
   flex-direction: column;
   background-color: white;
   background-image: url(${IMG_BACK_HOUSE});
-  background-size: cover;
+  background-size: 100% auto;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position:0px 0px;
 `;
 const Back02Component = styled(Box)`
   display: flex;
@@ -1804,6 +1822,13 @@ line-height: 29px;
 text-align: center;
 text-transform: uppercase;
 color: #444444 !important;
+`
+const SideScrollBar01 = styled(Box)`
+  display: flex;
+  position: fixed;
+  right: 200px;
+  top:50%;
+  color: black;
 `
 
 export default Content;
