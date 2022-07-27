@@ -6,9 +6,9 @@ import CustomDropDown from "../../components/CustomDropDown";
 import IMG_BACK_HOUSE from "../../assets/back_house.png";
 import IMG_BACK_MAP from "../../assets/image_back_map.svg";
 import IMG_LOGO from "../../assets/logo01.png";
-import IMG_KITCHEN from "../../assets/LIVING & KITCHEN.png";
-import IMG_ROOM from "../../assets/LIVING ROOM.png";
-import IMG_OUTDOOR from "../../assets/OUT DOOR AREA.png";
+import IMG_CiIRCLE01 from "../../assets/cimage1.png";
+import IMG_CiIRCLE02 from "../../assets/cimage2.png";
+import IMG_CiIRCLE03 from "../../assets/cimage3.png";
 // import IMG_ROADMAP from "../../assets/roadmap.png"
 import TEXT_FAQ from "../../assets/data/faq_text.json";
 import TEXT_ROADMAP from "../../assets/data/roadmap.json"
@@ -29,6 +29,8 @@ import IMGPiece02 from "../../assets/piece/02.png";
 import IMGPiece03 from "../../assets/piece/03.png";
 import IMGPiece04 from "../../assets/piece/04.png";
 import SimpleImageSlider from "react-simple-image-slider";
+import IMG_SCROLLSIDEBAR from "../../assets/scrollSideBar.png"
+import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight, MdClose } from "react-icons/md"
 
 const images = [
   IMGPiece04,
@@ -45,29 +47,32 @@ const Content = () => {
   const roadmapRef = useRef()
   const faqRef = useRef()
   const teamRef = useRef()
+  const galleryRef = useRef()
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const [flagGallery, setFlagGallery] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [scrollFlag, setScrollFlag] = useState(false);
   const [sideScrollFlag, setSideScrollFlag] = useState(false);
   const handleScroll = () => {
     const position = window.pageYOffset;
-    setScrollFlag(true);
     setScrollPosition(position);
+    setScrollFlag(true);
+    setSideScrollFlag(false)
   };
 
 
   useEffect(() => {
-    if (scrollFlag === false) {
+    if (scrollFlag === true) {
+      setSideScrollFlag(false);
+    }
+    else {
       setInterval(() => {
         setSideScrollFlag(true);
       }, 5000);
-    }
-    else {
-      setSideScrollFlag(false);
     }
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
@@ -78,10 +83,12 @@ const Content = () => {
 
   return (
     <StyledComponent>
-      {/* {
-        sideScrollFlag?<SideScrollBar01>123132</SideScrollBar01>:<></>
-      } */}
-      
+      {
+        sideScrollFlag ? <SideScrollBar01>
+          <img src={IMG_SCROLLSIDEBAR} width="100%" alt='' />
+        </SideScrollBar01> : <></>
+      }
+
       <Back01Component>
         {scrollPosition >= 50 ?
           <HeaderBarScroll>
@@ -248,7 +255,7 @@ const Content = () => {
         <PicPart01>
           <Pic01>
             <img
-              src={IMG_KITCHEN}
+              src={IMG_CiIRCLE01}
               width={"100%"}
               height={"100%"}
               style={{ borderRadius: "100%" }}
@@ -262,7 +269,7 @@ const Content = () => {
           </Position01>
           <Pic02>
             <img
-              src={IMG_ROOM}
+              src={IMG_CiIRCLE02}
               width={"100%"}
               height={"100%"}
               style={{ borderRadius: "100%" }}
@@ -271,7 +278,7 @@ const Content = () => {
           </Pic02>
           <Pic03>
             <img
-              src={IMG_OUTDOOR}
+              src={IMG_CiIRCLE03}
               width={"100%"}
               height={"100%"}
               style={{ borderRadius: "100%" }}
@@ -284,19 +291,90 @@ const Content = () => {
           <PositionText01>Pantai Lima</PositionText01>
         </Position01> */}
       </Back02Component>
-      <ImageShowPart01>
+      <ImageShowPart01 ref={galleryRef}>
         <TopImagePart01>
-          <LeftImagePart01>
-            <img src={IMGPiece01} width={'100%'} alt="" />
-          </LeftImagePart01>
-          <RightImagePart01>
-            <TopImagePart02>
-              <img src={IMGPiece02} width={'100%'} alt="" />
-            </TopImagePart02>
-            <DownImagePart02>
-              <img src={IMGPiece03} width={'100%'} alt="" />
-            </DownImagePart02>
-          </RightImagePart01>
+          {flagGallery ? <FullGalleryBox>
+            <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
+              backgroundPosition: 'center'
+            }} alt="" />
+            <LeftBtn01>
+              <MdOutlineKeyboardArrowLeft />
+            </LeftBtn01>
+            <RightBtn01>
+              <MdOutlineKeyboardArrowRight />
+            </RightBtn01>
+            <ExitBtn01 onClick={() => {
+              galleryRef.current.scrollIntoView({ behavior: 'smooth' });
+              setFlagGallery(false);
+            }}>
+              <MdClose />
+            </ExitBtn01>
+            <ImageShow01>
+              <EachIamge01>
+                <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
+                  borderTop: "4px solid black",
+                  borderLeft:"2px solid black",
+                  borderRight:"2px solid black"
+                }} alt="" />
+              </EachIamge01>
+              <EachIamge01>
+                <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
+                  borderTop: "4px solid black",
+                  borderLeft:"2px solid black",
+                  borderRight:"2px solid black"
+                }} alt="" />
+              </EachIamge01>
+              <EachIamge01>
+                <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
+                  borderTop: "4px solid black",
+                  borderLeft:"2px solid black",
+                  borderRight:"2px solid black"
+                }} alt="" />
+              </EachIamge01>
+              <EachIamge01>
+                <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
+                  borderTop: "4px solid black",
+                  borderLeft:"2px solid black",
+                  borderRight:"2px solid black"
+                }} alt="" />
+              </EachIamge01>
+              <EachIamge01>
+                <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
+                  borderTop: "4px solid black",
+                  borderLeft:"2px solid black",
+                  borderRight:"2px solid black"
+                }} alt="" />
+              </EachIamge01>
+              <EachIamge01>
+                <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
+                  borderTop: "4px solid black",
+                  borderLeft:"2px solid black",
+                  borderRight:"2px solid black"
+                }} alt="" />
+              </EachIamge01>
+            </ImageShow01>
+          </FullGalleryBox> :
+            <>
+              <LeftImagePart01 onClick={() => {
+                setFlagGallery(true);
+              }}>
+                <img src={IMGPiece01} width={'100%'} alt="" />
+              </LeftImagePart01>
+              <RightImagePart01 onClick={() => {
+                setFlagGallery(true);
+              }}>
+                <TopImagePart02>
+                  <img src={IMGPiece02} width={'100%'} alt="" />
+                </TopImagePart02>
+                <DownImagePart02 onClick={() => {
+                setFlagGallery(true);
+              }}>
+                  <img src={IMGPiece03} width={'100%'} alt="" />
+                </DownImagePart02>
+              </RightImagePart01>
+            </>
+          }
+
         </TopImagePart01>
         <DownImagePart01>
           <SimpleImageSlider
@@ -932,6 +1010,7 @@ background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 9
 `;
 
 const ContentText01 = styled(Box)`
+  
   width: 35%;
   justify-content: center;
   font-family: "Titillium Web";
@@ -949,6 +1028,7 @@ const ContentText01 = styled(Box)`
   @media (max-width: 1000px) {
     transition: 0.5s;
     font-size: 15px;
+    width: 70%;
   }
   @media (max-width: 700px) {
     transition: 0.5s;
@@ -1054,6 +1134,7 @@ const ContentText02 = styled(Box)`
   @media (max-width: 1000px) {
     transition: 0.5s;
     font-size: 15px;
+    width: 70%;
   }
   @media (max-width: 700px) {
     transition: 0.5s;
@@ -1082,6 +1163,7 @@ const ContentText03 = styled(Box)`
   @media (max-width: 1000px) {
     transition: 0.5s;
     font-size: 15px;
+    width: 70%;
   }
   @media (max-width: 700px) {
     transition: 0.5s;
@@ -1118,6 +1200,11 @@ const PicPart01 = styled(Box)`
         left: 35%;
         top: 60%;
   }
+  @media (max-width: 450px) {
+        transition: 0.5s;
+        left: 40%;
+        top: 60%;
+  }
 `
 const Pic01 = styled(Box)`
     display: flex;
@@ -1128,6 +1215,13 @@ const Pic01 = styled(Box)`
         transition: 0.5s;
         width: 100px;
         height: 100px;
+
+  }
+  @media (max-width: 450px) {
+        transition: 0.5s;
+        width: 70px;
+        height: 70px;
+        top: 100px;
   }
 `
 
@@ -1135,33 +1229,46 @@ const Pic02 = styled(Box)`
     display: flex;
     border-radius: 100%;
     position: absolute;
-    left: -200px;
-    top: -80px;
-    width: 168px;
-    height: 168px;
+    left: -320px;
+    top: -150px;
+    width: 280px;
+    height: 280px;
+    @media (max-width: 1200px) {
+        transition: 0.5s;
+        left: -230px;
+         top: -100px;
+        width: 200px;
+        height: 200px;
+  }
     @media (max-width: 800px) {
         transition: 0.5s;
         left: -130px;
-    top: -40px;
+         top: -40px;
         width: 110px;
         height: 110px;
   }
   @media (max-width: 450px) {
         transition: 0.5s;
-        left: -90px;
-    top: -20px;
-        width: 80px;
-        height: 80px;
+        left: -120px;
+    top: 0px;
+
   }
 `
 const Pic03 = styled(Box)`
     display: flex;
     border-radius: 100%;
     position: absolute;
-    left: -200px;
-    bottom: -200px;
-    width: 244px;
-    height: 244px;
+    left: -250px;
+    bottom: -400px;
+    width: 400px;
+    height: 400px;
+    @media (max-width: 1200px) {
+        transition: 0.5s;
+        left: -230px;
+         top: 120px;
+        width: 300px;
+        height: 300px;
+  }
     @media (max-width: 800px) {
         transition: 0.5s;
         left: -140px;
@@ -1171,10 +1278,9 @@ const Pic03 = styled(Box)`
   }
   @media (max-width: 450px) {
         transition: 0.5s;
-        left: -100px;
-    bottom: -120px;
-        width: 120px;
-        height: 120px;
+        left: -80px;
+    bottom: -80px;
+
   }
 `
 
@@ -1765,16 +1871,24 @@ const ImageShowPart01 = styled(Box)`
   width: 100%;
   flex-direction: column;
   margin-top:50px;
+
 `
 const TopImagePart01 = styled(Box)`
   display: flex;
   width:100%;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `
 const LeftImagePart01 = styled(Box)`
   display: flex;
   flex: 2;
   width: 100%;
   margin-right: 30px;
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 30px grey;
+  }
 `
 const RightImagePart01 = styled(Box)`
   display: flex;
@@ -1786,12 +1900,20 @@ const TopImagePart02 = styled(Box)`
   display: flex;
   width:100%;
   flex:1;
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 30px grey;
+  }
 `
 const DownImagePart02 = styled(Box)`
   display: flex;
   width:100%;
   flex:1;
   margin-top: 30px;
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 30px grey;
+  }
 `
 const DownImagePart01 = styled(Box)`
   display: flex;
@@ -1826,9 +1948,86 @@ color: #444444 !important;
 const SideScrollBar01 = styled(Box)`
   display: flex;
   position: fixed;
-  right: 200px;
+  right: 10%;
   top:50%;
+  transition: .5s;
+  z-index: 100;
+`
+const FullGalleryBox = styled(Box)`
+  display: flex;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 80vh;
+  z-index: 120;
+`
+const LeftBtn01 = styled(Box)`
+  display: flex;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  left: 5%;
+  bottom: 25%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: white;
   color: black;
+  font-size: 3rem;
+  &:hover{
+    cursor: pointer;
+  }
+`
+
+const RightBtn01 = styled(Box)`
+  display: flex;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: 5%;
+  bottom: 25%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: white;
+  color: black;
+  font-size: 3rem;
+  &:hover{
+    cursor: pointer;
+  }
+`
+const ExitBtn01 = styled(Box)`
+  display: flex;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: 5%;
+  top: 15%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: white;
+  color: black;
+  font-size: 3rem;
+  &:hover{
+    cursor: pointer;
+  }
+`
+const ImageShow01 = styled(Box)`
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 20vh;
+  left: 0px;
+  bottom: 0px;
+`
+const EachIamge01 = styled(Box)`
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  border: 2px 2px 2px 0px solid black;
 `
 
 export default Content;
