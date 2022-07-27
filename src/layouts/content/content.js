@@ -213,7 +213,7 @@ const Content = () => {
           </ButtonBox01> */}
         </NFTCollectionPart01>
         <NFTCollectionPart01 ref={howtoRef} mt={'50px'} mb={'100px'}>
-          <HeadText02>What do i get</HeadText02>
+          <HeadText01>What do i get</HeadText01>
           <ContentText02>
             Owning a METABNB NFT gives you access to multiple experiences including:
           </ContentText02>
@@ -251,9 +251,9 @@ const Content = () => {
       </Back01Component>
       <Back02Component ref={locationRef}>
         <Box display={"flex"} flex="1" alignItems={'center'} flexDirection={'column'}>
-          <HeadText03>
+          <HeadText01 width={"100%"} paddingBottom={'10px'}>
             Location
-          </HeadText03>
+          </HeadText01>
           <Box display={"flex"} width={'80%'} border={'1px dashed #26AAB8'}></Box>
           <LocationTxt01>Bali, Pererenan, Pantai Lima</LocationTxt01>
 
@@ -412,7 +412,7 @@ const Content = () => {
       <RoadMapPart01 ref={roadmapRef}>
         {/* <RoadDesktop01></RoadDesktop01> */}
         <RoadDesktop>
-          <HeadText02>Roadmap</HeadText02>
+          <HeadText01>Roadmap</HeadText01>
           <RoadPart02>
             <LeftRoadmap>
               {TEXT_ROADMAP.map((each, index) => {
@@ -529,7 +529,7 @@ const Content = () => {
         </RoadMobile01>
       </RoadMapPart01>
       <FAQPart01 ref={faqRef}>
-        <HeadText02>FAQ</HeadText02>
+        <HeadText01>FAQ</HeadText01>
         {TEXT_FAQ.map((each, index) => {
           return (
             <CustomDropDown
@@ -542,7 +542,7 @@ const Content = () => {
         })}
       </FAQPart01>
       <TeamPart01 ref={teamRef}>
-        <HeadText02>TEAM</HeadText02>
+        <HeadText01>TEAM</HeadText01>
         <TeamPart02>
           <EachPart01>
             <Circle02>
@@ -910,139 +910,43 @@ const NFTCollectionPart01 = styled(Box)`
 `;
 const HeadText01 = styled(Box)`
   display: flex;
+  width: 90%;
   justify-content: center;
   font-family: 'Zen Tokyo Zoo';
-font-style: normal;
-font-weight: 400;
-font-size: 98px;
-line-height: 100px;
-/* or 94% */
-text-align: center;
-
+  font-style: normal;
+  font-weight: 400;
+  font-size: 98px;
+  line-height: 100px;
+  text-align: center;
   text-transform: uppercase;
   background-clip: text;
-background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 92.58%);
+  background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 92.58%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   @media (max-width: 1300px) {
     transition: 0.5s;
-    font-weight: 400;
     font-size: 85px;
     line-height: 85px;
   }
   @media (max-width: 1000px) {
     transition: 0.5s;
-    font-weight: 400;
     font-size: 70px;
     line-height: 70px;
   }
-  @media (max-width: 900px) {
-    transition: 0.5s;
-    font-weight: 400;
-    font-size: 60px;
-    line-height: 60px;
-  }
   @media (max-width: 700px) {
     transition: 0.5s;
-    font-weight: 400;
     font-size: 50px;
     line-height: 50px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     transition: 0.5s;
-    font-weight: 400;
     font-size: 40px;
     line-height: 40px;
   }
-  @media (max-width: 500px) {
-    transition: 0.5s;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 30px;
-  }
-  @media (max-width: 400px) {
-    transition: 0.5s;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 25px;
-  }
-`;
-const HeadText02 = styled(Box)`
-  display: flex;
-  justify-content: center;
-  font-family: "Zen Tokyo Zoo";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 98px;
-  text-transform: uppercase;
-background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 92.58%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  @media (max-width: 1300px) {
-    transition: 0.5s;
-    font-weight: 400;
-    font-size: 90px;
-  }
-  @media (max-width: 1000px) {
-    transition: 0.5s;
-    font-weight: 400;
-    font-size: 80px;
-  }
-  @media (max-width: 700px) {
-    transition: 0.5s;
-    font-weight: 400;
-    font-size: 70px;
-  }
-  @media (max-width: 500px) {
-    transition: 0.5s;
-    font-weight: 400;
-    font-size: 50px;
-  }
-  @media (max-width: 500px) {
-    transition: 0.5s;
-    font-weight: 400;
-    font-size: 40px;
-  }
-`;
 
-const HeadText03 = styled(Box)`
-  display: flex;
-  font-family: "Zen Tokyo Zoo";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 98px;
-  text-align: center;
-  text-transform: uppercase;
-background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 92.58%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  @media (max-width: 1300px) {
-    transition: 0.5s;
-    font-size: 90px;
-  }
-  @media (max-width: 1000px) {
-    transition: 0.5s;
-    font-size: 80px;
-  }
-  @media (max-width: 700px) {
-    transition: 0.5s;
-    font-size: 70px;
-  }
-  @media (max-width: 500px) {
-    transition: 0.5s;
-    font-size: 50px;
-  }
-  @media (max-width: 500px) {
-    transition: 0.5s;
-    font-weight: 400;
-    font-size: 40px;
-  }
 `;
 
 const ContentText01 = styled(Box)`
-  
   width: 35%;
   justify-content: center;
   font-family: "Titillium Web";
