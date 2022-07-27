@@ -16,7 +16,7 @@ import TEXT_ROADMAP from "../../assets/data/roadmap.json"
 // import { BiBook, BiMessageDetail } from "react-icons/bi";
 // import { RiBug2Fill, RiMacbookLine, RiGovernmentLine } from "react-icons/ri";
 import { FaGithub, FaTwitter, FaDiscord, FaMedium } from "react-icons/fa";
-import { MdMenu } from "react-icons/md";
+import { BsThreeDotsVertical } from "react-icons/bs";
 import IMGTeamseb from "../../assets/team/seb.png"
 import IMGTeamexe from "../../assets/team/exe.png"
 import IMGTeammad from "../../assets/team/mad.png"
@@ -28,16 +28,19 @@ import IMGPiece01 from "../../assets/piece/01.png";
 import IMGPiece02 from "../../assets/piece/02.png";
 import IMGPiece03 from "../../assets/piece/03.png";
 import IMGPiece04 from "../../assets/piece/04.png";
+import IMGPiece05 from "../../assets/piece/05.png";
 import SimpleImageSlider from "react-simple-image-slider";
 import IMG_SCROLLSIDEBAR from "../../assets/scrollSideBar.png"
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight, MdClose } from "react-icons/md"
+import { CgMenuGridO } from "react-icons/cg"
 
 const images = [
+  IMGPiece01,
+  IMGPiece02,
+  IMGPiece03,
   IMGPiece04,
-  IMGPiece04,
-  IMGPiece04,
-  IMGPiece04,
-  IMGPiece04,
+  IMGPiece01,
+  IMGPiece02,
 ];
 
 const Content = () => {
@@ -52,6 +55,7 @@ const Content = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [indexImage, setIndexImage] = useState(0);
 
   const [flagGallery, setFlagGallery] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -136,7 +140,7 @@ const Content = () => {
                     handleOpen();
                   }}
                 >
-                  <MdMenu />
+                  <BsThreeDotsVertical />
                 </CustomBtn2>
               </ConnectWallet01>
             </HeaderBar>
@@ -185,12 +189,14 @@ const Content = () => {
                   handleOpen();
                 }}
               >
-                <MdMenu />
+                <BsThreeDotsVertical />
               </CustomBtn2>
             </ConnectWallet01>
           </HeaderBar>
         }
-        <NFTCollectionPart01 ref={mintRef} mt={'200px'} mb={'100px'}>
+        <NFTCollectionPart01 ref={mintRef} mt={'200px'} mb={'100px'} style={{
+          filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))'
+        }}>
           <HeadText01>Bringing real life</HeadText01>
           <HeadText01>assets on to the</HeadText01>
           <HeadText01>blockchain</HeadText01>
@@ -294,89 +300,97 @@ const Content = () => {
       <ImageShowPart01 ref={galleryRef}>
         <TopImagePart01>
           {flagGallery ? <FullGalleryBox>
-            <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
+            <img src={images[indexImage]} width={'100%'} height={'100%'} style={{
               backgroundPosition: 'center'
             }} alt="" />
-            <LeftBtn01>
+            <LeftBtn01 onClick={() => {
+              let temp = indexImage;
+              if (temp === 0) {
+                temp = images.length - 1;
+                // return;
+              }
+              else{
+                temp--;
+              }
+              setIndexImage(temp);
+            }}>
               <MdOutlineKeyboardArrowLeft />
             </LeftBtn01>
-            <RightBtn01>
+            <RightBtn01 onClick={() => {
+              let temp = indexImage;
+              if (temp === images.length - 1) {
+                temp = 0;
+                // return;
+              }
+              else{
+                temp++;
+              }
+              setIndexImage(temp);
+            }
+            }>
               <MdOutlineKeyboardArrowRight />
             </RightBtn01>
             <ExitBtn01 onClick={() => {
+              // setIndex(0);
               galleryRef.current.scrollIntoView({ behavior: 'smooth' });
               setFlagGallery(false);
             }}>
               <MdClose />
             </ExitBtn01>
             <ImageShow01>
-              <EachIamge01>
-                <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
-                  borderTop: "4px solid black",
-                  borderLeft:"2px solid black",
-                  borderRight:"2px solid black"
-                }} alt="" />
-              </EachIamge01>
-              <EachIamge01>
-                <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
-                  borderTop: "4px solid black",
-                  borderLeft:"2px solid black",
-                  borderRight:"2px solid black"
-                }} alt="" />
-              </EachIamge01>
-              <EachIamge01>
-                <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
-                  borderTop: "4px solid black",
-                  borderLeft:"2px solid black",
-                  borderRight:"2px solid black"
-                }} alt="" />
-              </EachIamge01>
-              <EachIamge01>
-                <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
-                  borderTop: "4px solid black",
-                  borderLeft:"2px solid black",
-                  borderRight:"2px solid black"
-                }} alt="" />
-              </EachIamge01>
-              <EachIamge01>
-                <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
-                  borderTop: "4px solid black",
-                  borderLeft:"2px solid black",
-                  borderRight:"2px solid black"
-                }} alt="" />
-              </EachIamge01>
-              <EachIamge01>
-                <img src={IMGPiece01} width={'100%'} height={'100%'} style={{
-                  borderTop: "4px solid black",
-                  borderLeft:"2px solid black",
-                  borderRight:"2px solid black"
-                }} alt="" />
-              </EachIamge01>
+              {
+                images.map((each, index) => {
+                  return (
+                    <EachIamge01 key={index} bgcolor={'black'}>
+                      <img src={each} width={'100%'} height={'100%'} style={{
+                        borderTop: "4px solid black",
+                        borderLeft: "2px solid black",
+                        borderRight: "2px solid black",
+                        opacity: indexImage === index?"1":"0.4"
+                      }} alt="" />
+                    </EachIamge01>
+                  )
+                })
+              }
+
             </ImageShow01>
           </FullGalleryBox> :
-            <>
-              <LeftImagePart01 onClick={() => {
-                setFlagGallery(true);
-              }}>
-                <img src={IMGPiece01} width={'100%'} alt="" />
-              </LeftImagePart01>
-              <RightImagePart01 onClick={() => {
-                setFlagGallery(true);
-              }}>
-                <TopImagePart02>
-                  <img src={IMGPiece02} width={'100%'} alt="" />
-                </TopImagePart02>
-                <DownImagePart02 onClick={() => {
-                setFlagGallery(true);
-              }}>
-                  <img src={IMGPiece03} width={'100%'} alt="" />
-                </DownImagePart02>
-              </RightImagePart01>
-            </>
+            <Box display={"flex"} width={'100%'} flexDirection="column">
+              <Box display={"flex"} width={'100%'}>
+                <LeftImagePart01>
+                  <img src={IMGPiece01} width={'100%'} alt="" />
+                </LeftImagePart01>
+                <RightImagePart01 >
+                  <TopImagePart02>
+                    <img src={IMGPiece02} width={'100%'} alt="" />
+                  </TopImagePart02>
+                  <DownImagePart02>
+                    <img src={IMGPiece03} width={'100%'} alt="" />
+                  </DownImagePart02>
+                </RightImagePart01>
+              </Box>
+
+              <DownImagePart01>
+                <LeftImagePart02>
+                  <img src={IMGPiece05} width={'100%'} alt="" />
+                </LeftImagePart02>
+                <RightImagePart02>
+                  <img src={IMGPiece04} width={'100%'} alt="" />
+                </RightImagePart02>
+                <ShowAllBtn onClick={() => {
+                  setFlagGallery(true);
+                }}>
+                  <Box display={"flex"} justifyContent={'center'} alignItems={'center'} mr={'5px'}>
+                    <CgMenuGridO fontSize={"25px"} />
+                  </Box>
+                  <Box display={"flex"} justifyContent={'center'} alignItems={'center'}>SHOW ALL</Box>
+                </ShowAllBtn>
+              </DownImagePart01>
+            </Box>
           }
 
         </TopImagePart01>
-        <DownImagePart01>
+        {/* <DownImagePart04>
           <SimpleImageSlider
             width={"100%"}
             height={550}
@@ -384,7 +398,7 @@ const Content = () => {
             showBullets={true}
             showNavs={true}
           />
-        </DownImagePart01>
+        </DownImagePart04> */}
         <DownImagePart03>
           <SimpleImageSlider
             width={"100%"}
@@ -585,7 +599,7 @@ const Content = () => {
           <MarkImg>
             <img src={IMG_LOGO} alt="" width={"60px"}></img>
           </MarkImg>
-          <MarkLetter>metabnb</MarkLetter>
+          <MarkLetter>METAVACATION</MarkLetter>
           {/* <TxtWalletAddress>{active === true ? account.slice(0, 6) + "..." + account.slice(-4) : "Connect Wallet"}</TxtWalletAddress> */}
           <LinkList>
             <EachLink01
@@ -737,7 +751,7 @@ line-height: 30px;
 align-items: center;
   color: #444444;
   margin-left: 5px;
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     transition: 0.5s;
     display: none;
   }
@@ -849,7 +863,7 @@ color: #444444;
     background-color: #444444;
     color: white;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     transition: 0.5s;
     display: none;
   }
@@ -862,9 +876,8 @@ const WalletBox03 = styled(Box)`
   margin-left: 10px;
   width: 88px;
   height: 32px;
-  background: white;
-  border: 1px solid #444444;
-  border-radius: 20px;
+  border: 1px dashed #444444;
+  border-radius: 56px;
   font-family: 'Titillium Web';
 font-style: normal;
 font-weight: 700;
@@ -874,16 +887,17 @@ align-items: center;
 text-align: center;
 text-transform: uppercase;
 
-  color: #342361;
+  color: #444444;
   &:hover {
     cursor: pointer;
     transition: 0.5s;
     background-color: #444444;
     color: white;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     transition: 0.5s;
     display: flex;
+
   }
 `;
 
@@ -893,19 +907,20 @@ const NFTCollectionPart01 = styled(Box)`
   align-items: center;
   flex-direction: column;
   width: 100%;
-
 `;
 const HeadText01 = styled(Box)`
   display: flex;
   justify-content: center;
-  font-family: "Zen Tokyo Zoo";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 108px;
-  text-align: center;
-  text-transform: uppercase;
-  
+  font-family: 'Zen Tokyo Zoo';
+font-style: normal;
+font-weight: 400;
+font-size: 98px;
+line-height: 100px;
+/* or 94% */
+text-align: center;
 
+  text-transform: uppercase;
+  background-clip: text;
 background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 92.58%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -913,36 +928,43 @@ background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 9
     transition: 0.5s;
     font-weight: 400;
     font-size: 85px;
+    line-height: 85px;
   }
   @media (max-width: 1000px) {
     transition: 0.5s;
     font-weight: 400;
     font-size: 70px;
+    line-height: 70px;
   }
   @media (max-width: 900px) {
     transition: 0.5s;
     font-weight: 400;
     font-size: 60px;
+    line-height: 60px;
   }
   @media (max-width: 700px) {
     transition: 0.5s;
     font-weight: 400;
     font-size: 50px;
+    line-height: 50px;
   }
   @media (max-width: 600px) {
     transition: 0.5s;
     font-weight: 400;
     font-size: 40px;
+    line-height: 40px;
   }
   @media (max-width: 500px) {
     transition: 0.5s;
     font-weight: 400;
     font-size: 30px;
+    line-height: 30px;
   }
   @media (max-width: 400px) {
     transition: 0.5s;
     font-weight: 400;
     font-size: 25px;
+    line-height: 25px;
   }
 `;
 const HeadText02 = styled(Box)`
@@ -951,7 +973,7 @@ const HeadText02 = styled(Box)`
   font-family: "Zen Tokyo Zoo";
   font-style: normal;
   font-weight: 400;
-  font-size: 108px;
+  font-size: 98px;
   text-transform: uppercase;
 background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 92.58%);
   -webkit-background-clip: text;
@@ -960,14 +982,19 @@ background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 9
   @media (max-width: 1300px) {
     transition: 0.5s;
     font-weight: 400;
-    font-size: 85px;
+    font-size: 90px;
   }
   @media (max-width: 1000px) {
     transition: 0.5s;
     font-weight: 400;
-    font-size: 70px;
+    font-size: 80px;
   }
   @media (max-width: 700px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 70px;
+  }
+  @media (max-width: 500px) {
     transition: 0.5s;
     font-weight: 400;
     font-size: 50px;
@@ -1007,6 +1034,11 @@ background: linear-gradient(271.82deg, rgba(40, 46, 183, 0.96) 12.47%, #21D9B8 9
     transition: 0.5s;
     font-size: 50px;
   }
+  @media (max-width: 500px) {
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 40px;
+  }
 `;
 
 const ContentText01 = styled(Box)`
@@ -1024,11 +1056,12 @@ const ContentText01 = styled(Box)`
   @media (max-width: 1300px) {
     transition: 0.5s;
     font-size: 16px;
+    width: 70%;
   }
   @media (max-width: 1000px) {
     transition: 0.5s;
     font-size: 15px;
-    width: 70%;
+
   }
   @media (max-width: 700px) {
     transition: 0.5s;
@@ -1764,7 +1797,7 @@ const MarkLetter = styled(Box)`
   justify-content: content;
   margin-top: 10px;
   /* color: white; */
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
 `;
 // const TxtWalletAddress = styled(Box)`
@@ -1830,23 +1863,19 @@ const ContactBox = styled(Box)`
 const CustomBtn2 = styled(Box)`
   display: none;
   /* position: fixed; */
-  width: 32px;
-  height: 32px;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
-  font-size: 1.2rem;
+  margin-left: 10px;
+  font-size: 2rem;
   font-weight: bold;
-  border-radius: 6px;
   border: none;
-  background-color: black;
   /* background-color: rgb(34, 37, 46); */
-  color: white;
+  color: #444444;
   transition: 0.3s;
   &:hover {
     cursor: pointer;
     transition: 0.5s;
-    background-color: #444444;
+    /* background-color: #444444; */
   }
   @media (max-width: 1200px) {
     display: flex;
@@ -1876,7 +1905,7 @@ const ImageShowPart01 = styled(Box)`
 const TopImagePart01 = styled(Box)`
   display: flex;
   width:100%;
-  @media (max-width: 1200px) {
+  @media (max-width: 700px) {
     display: none;
   }
 `
@@ -1886,8 +1915,8 @@ const LeftImagePart01 = styled(Box)`
   width: 100%;
   margin-right: 30px;
   &:hover{
-    cursor: pointer;
-    box-shadow: 0px 0px 30px grey;
+    /* cursor: pointer; */
+    /* box-shadow: 0px 0px 30px grey; */
   }
 `
 const RightImagePart01 = styled(Box)`
@@ -1901,8 +1930,8 @@ const TopImagePart02 = styled(Box)`
   width:100%;
   flex:1;
   &:hover{
-    cursor: pointer;
-    box-shadow: 0px 0px 30px grey;
+    /* cursor: pointer; */
+    /* box-shadow: 0px 0px 30px grey; */
   }
 `
 const DownImagePart02 = styled(Box)`
@@ -1911,18 +1940,35 @@ const DownImagePart02 = styled(Box)`
   flex:1;
   margin-top: 30px;
   &:hover{
-    cursor: pointer;
-    box-shadow: 0px 0px 30px grey;
+    /* cursor: pointer; */
+    /* box-shadow: 0px 0px 30px grey; */
   }
 `
 const DownImagePart01 = styled(Box)`
   display: flex;
-  width: 100%;
+  position: relative;
+  width:100%;
+  flex:1;
+  margin-top: 30px;
+  /* width: 100%;
   margin-top:30px;
   @media (max-width: 700px) {
     display: none;
-  }
+  } */
 `
+const LeftImagePart02 = styled(Box)`
+  display: flex;
+  flex: 1;
+  width: 100%;
+  margin-right:30px;
+`
+
+const RightImagePart02 = styled(Box)`
+  display: flex;
+  flex: 3.3;
+  width: 100%;
+`
+
 const DownImagePart03 = styled(Box)`
   display: none;
   width: 100%;
@@ -1939,11 +1985,24 @@ font-style: normal;
 font-weight: 700;
 font-size: 19px;
 line-height: 29px;
+
 /* identical to box height */
 
 text-align: center;
 text-transform: uppercase;
 color: #444444 !important;
+@media (max-width: 1000px) {
+    transition: .3s;
+    font-size: 16px;
+  }
+  @media (max-width: 700px) {
+    transition: .3s;
+    font-size: 14px;
+  }
+  @media (max-width: 500px) {
+    transition: .3s;
+    font-size: 12px;
+  }
 `
 const SideScrollBar01 = styled(Box)`
   display: flex;
@@ -1959,7 +2018,7 @@ const FullGalleryBox = styled(Box)`
   left: 0px;
   top: 0px;
   width: 100%;
-  height: 80vh;
+  height: 85vh;
   z-index: 120;
 `
 const LeftBtn01 = styled(Box)`
@@ -1968,7 +2027,7 @@ const LeftBtn01 = styled(Box)`
   height: 60px;
   position: fixed;
   left: 5%;
-  bottom: 25%;
+  bottom: 20%;
   justify-content: center;
   align-items: center;
   border-radius: 100%;
@@ -1986,7 +2045,7 @@ const RightBtn01 = styled(Box)`
   height: 60px;
   position: fixed;
   right: 5%;
-  bottom: 25%;
+  bottom: 20%;
   justify-content: center;
   align-items: center;
   border-radius: 100%;
@@ -2018,7 +2077,7 @@ const ImageShow01 = styled(Box)`
   display: flex;
   position: fixed;
   width: 100%;
-  height: 20vh;
+  height: 15vh;
   left: 0px;
   bottom: 0px;
 `
@@ -2029,5 +2088,26 @@ const EachIamge01 = styled(Box)`
   height: 100%;
   border: 2px 2px 2px 0px solid black;
 `
-
+const ShowAllBtn = styled(Box)`
+  display: flex;
+  transform: translate(-50%, 0px);
+  left: 50%;
+  bottom: -25px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 180px;
+  height: 50px;
+  background: #FFFFFF;
+  border-radius: 50px;
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  &:hover{
+    cursor: pointer;
+  }
+`
 export default Content;
